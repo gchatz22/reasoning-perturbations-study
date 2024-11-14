@@ -26,7 +26,8 @@ processed_datapoints_by_reasoning_steps = sorted(
     key=lambda x: x["steps"],
 )
 
-path = "/Users/giannis/Desktop/[6.861] Quantitative Methods for NLP/final_project/datapoints_by_reasoning_steps.jsonl"
+parent_dir = "/Users/giannis/Desktop/[6.861] Quantitative Methods for NLP/final_project"
+path = parent_dir + "datapoints_by_reasoning_steps.jsonl"
 with open(path, "w") as file:
     for entry in processed_datapoints_by_reasoning_steps:
         file.write(json.dumps(entry) + "\n")

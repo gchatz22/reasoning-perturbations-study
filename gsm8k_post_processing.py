@@ -3,7 +3,8 @@ import random
 
 import os
 
-path = "/Users/giannis/Desktop/[6.861] Quantitative Methods for NLP/final_project/datapoints_by_reasoning_steps.jsonl"
+parent_dir = "/Users/giannis/Desktop/[6.861] Quantitative Methods for NLP/final_project"
+path = parent_dir + "datapoints_by_reasoning_steps.jsonl"
 datapoints = []
 with open(path, "r") as file:
     for line in file:
