@@ -1,0 +1,61 @@
+,question,answer,index
+0,"Isabella earns $5 an hour babysitting. She babysits 5 hours every day, 6 afternoons a week. After babysitting for 7 weeks, how much money will Isabella have earned?","She earns 5*5=$<<5*5=25>>25 in a day.
+In a week she earns 25*6=$<<25*6=150>>150.
+In 7 weeks, she earns 150*7=$<<150*7=1050>>1050
+#### 1050",2324
+1,"On Monday, Mack writes in his journal for 60 minutes at a rate of 1 page every 30 minutes. On Tuesday, Mack writes in his journal for 45 minutes at a rate of 1 page every 15 minutes. On Wednesday, Mack writes 5 pages in his journal. How many pages total does Mack write in his journal from Monday to Wednesday?","On Monday, Mack writes 60 / 30 = <<60/30=2>>2 pages
+On Tuesday, Mack writes 45 / 15 = <<45/15=3>>3 pages
+In total, from Monday to Wednesday, Mack writes 2 + 3 + 5 = <<2+3+5=10>>10 pages
+#### 10",526
+2,"There are 70 cookies in a jar. If there are only 28 cookies left after a week, and Paul took out the same amount each day, how many cookies did he take out in four days?","Paul took out a total of 70-28 = <<70-28=42>>42 cookies in a week.
+Paul took out 42/7 = <<42/7=6>>6 cookies out of the jar each day.
+Over four days, Paul took out 6*4 = <<6*4=24>>24 cookies from the jar.
+#### 24",7393
+3,"Briar is attending a one-week community empowerment event and has to take a cab ride to the event and back home every day. A cab ride costs $2.5 per mile. If the event is 200 miles away from Briar's home, calculate the total amount of money the cab rides cost would be at the end of the event?","If a cab ride costs $2.5 per mile, and Briar has to go to an event 200 miles away, he will spend 200* $2.5 = $<<200*2.5=500>>500 one way to the trip.
+Since the round trip is also 200 miles and Briar is charged $500, the total amount he spends in a day to go to the event and back is $500+$500 = $<<500+500=1000>>1000
+The event is one week, meaning Briar will have to spend $1000*7 = $<<1000*7=7000>>7000 on the cab rides
+#### 7000",6986
+4,McKenna has 34 stuffed animals. Kenley has twice as many as McKenna.  Tenly has 5 more than Kenley . How many stuffed animals do the three girls have in all?,"Kenley has 2 * 34 stuffed animals = <<2*34=68>>68 stuffed animals.
+Tenly has 68 stuffed animals + 5 = <<68+5=73>>73 stuffed animals.
+The three girls total had 34 + 68 + 73 = <<34+68+73=175>>175 stuffed animals
+#### 175",4700
+5,"We the People has 17 cows. Happy Good Healthy Family has two more than three times the number of cows We the People has. If their cows are taken to a ranch to graze together, how many cows will be in the ranch altogether?","Three times the number of cows We the People has is 3*17=<<3*17=51>>51 cows.
+Happy Good Healthy Family has two more than three times the number of cows We the People has, a total of 51+2=53 cows.
+If the cows are taken to a ranch to graze together, their total will be 53+17=<<53+17=70>>70 cows.
+#### 70",1088
+6,"Baseball season opened up with the Chicago Cubs at home at Wrigley Field. They scored 2 home runs in the third inning, 1 home run in the fifth inning and 2 more home runs in the eighth inning. Their opponents, the Cardinals, scored 1 home run in the second inning and 1 home run in the fifth inning. How many more home runs did the Chicago Cubs score than the Cardinals in the game?","The Chicago Cubs scored 2 home runs in the third inning, 1 home run in the fifth inning, and 2 home runs in the eighth for a combined total of 2+1+2= <<2+1+2=5>>5 home runs for the game.
+The Cardinals scored 1 home run in the second inning and 1 home run in the fifth inning for a combined total of 1+1=<<1+1=2>>2 home runs for the game.
+If the Chicago Cubs scored a total of 5 home runs in the game and the Cardinals scored a total of 2 home runs in the games then 5-2=<<5-2=3>>3 more home runs were scored by the Chicago Cubs than the Cardinals in the game.
+#### 3",3540
+7,"There are 325 students in a local high school.  40 percent of the students have glasses, how many students do not have glasses?","People that do not have glasses 100%-40%=60%
+325(.10)=32.5
+32.5*6=<<32.5*6=195>>195 students
+#### 195",5188
+8,Ping pong balls sell for $.10 each.  Johnny buys 10000 for a prank.  He gets a 30% discount for buying in such large bulk.  How much does he pay?,"The ping pong balls cost 10000*.10=$<<10000*.10=1000>>1000
+So the discount is 1000*.30=$<<1000*.30=300>>300
+So he pays 1000-300=$<<1000-300=700>>700.
+#### 700",673
+9,"Ellis is going to take a road trip with her family. First, she needs to figure out how many bottles of water she should bring for everyone. There will be four people total: Ellis, her mother, her sister, and her aunt. They will be on the road to their destination for 8 hours and drive 8 hours to return home. Every hour each person will want to drink 1/2 a bottle of water. How many water bottles will Ellis' family need total?","Ellis and her family of 4 will be traveling for 8 hours going and 8 hours coming home = <<8+8=16>>16 hours total.
+Each person needs 1/2 a bottle of water each hour, so 1/2 a bottle x 16 hours = <<1/2*16=8>>8 bottles.
+There are 4 people traveling so 8 total water bottles for each person x 4 people = <<8*4=32>>32 total water bottles.
+#### 32",6024
+10,"There are 250 books inside a library. On Tuesday, 120 books are taken out to be read by children. On Wednesday, 35 books are returned. On Thursday, another 15 books are withdrawn from the library. How many books are now in the library?","On Tuesday, 120 books were taken out 250 - 120 = <<250-120=130>>130 books
+On Wednesday, 35 books were returned 130 + 35 = <<130+35=165>>165 books
+On Thursday, 15 books were borrowed 165 - 15 = 150 books
+#### 150",2032
+11,"During the hot dog eating contest, the 1st competitor ate 12 hot dogs in 3 minutes.  The 2nd competitor ate twice that amount and the 3rd competitor ate 25% less than the 2nd competitor.  How many hotdogs did the 3rd competitor eat?","The 2nd competitor ate twice the amount of the 1st competitor's 12 hot dogs So he ate 2*12 = <<2*12=24>>24 hot dogs
+The 3rd competitor ate 25% less than the 2nd's 24 hot dogs, which is 24/4 = 6 hot dogs
+If the 2nd competitor ate 24 hot dogs, and the 3rd ate 25% less than that, then the 3rd competitor ate 24 - 6 = <<24-6=18>>18 hot dogs
+#### 18",5103
+12,"Jimmy wants to play in the inflatable swimming pool in his backyard. The swimming pool is empty and the garage is locked, so he cannot use the hose to fill the pool. He finds a 2 gallon bucket and calculates that it takes 20 seconds to fill the bucket from the tap and carry it to the pool where he pours in the water. If the pool holds 84 gallons of water, how many minutes will it take Jimmy to fill the pool?","It will take 84 / 2 = <<84/2=42>>42 trips to fill the pool with water.
+This will take Jimmy 42 trips * 20 seconds per trip = <<42*20=840>>840 seconds.
+This means that Jimmy will spend 840 seconds * 1 minute/ 60 seconds = 14 minutes filling the pool.
+#### 14",5497
+13,"Allison went to the craft store with her friend Marie to buy some glue sticks and construction paper. Allison bought 8 more glue sticks than Marie, but Marie bought six times as many packs of construction paper as Allison. If Marie bought 15 glue sticks and 30 packs of construction paper how many craft supply items did Allison buy all together?","Allison bought 8+15=<<8+15=23>>23 glue sticks
+Allison bought 30/6=<<30/6=5>>5 packs of construction paper.
+Allison bought 23+5= <<23+5=28>>28 craft supply items
+#### 28",6042
+14,"The price per organic egg is 50 cents. The price of a tray of eggs that contains 30 eggs is $12. How much can you save, in cents, per egg if you buy a tray versus individual eggs?","The price per egg in a tray is $12/30 eggs = $<<12/30=0.4>>0.4/egg.
+The equivalent of $0.4 in cents is $0.4 x 100 cents/dollar = <<0.4*100=40>>40 cents.
+Hence, you can save 50 cents - 40 cents = <<50-40=10>>10 cents per egg if you buy a tray.
+#### 10",4019

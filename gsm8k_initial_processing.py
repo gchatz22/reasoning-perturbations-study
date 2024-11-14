@@ -26,7 +26,9 @@ processed_datapoints_by_reasoning_steps = sorted(
     key=lambda x: x["steps"],
 )
 
-parent_dir = "/Users/giannis/Desktop/[6.861] Quantitative Methods for NLP/final_project"
+parent_dir = (
+    "/Users/giannis/Desktop/[6.861] Quantitative Methods for NLP/final_project/"
+)
 path = parent_dir + "datapoints_by_reasoning_steps.jsonl"
 with open(path, "w") as file:
     for entry in processed_datapoints_by_reasoning_steps:
