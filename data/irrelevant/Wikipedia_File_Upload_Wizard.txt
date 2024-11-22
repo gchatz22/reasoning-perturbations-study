@@ -1,0 +1,86 @@
+Thank you for offering to contribute an image or other media file for use on Wikipedia. This wizard will guide you through a questionnaire prompting you for the appropriate copyright and sourcing information for each file. Please ensure you understand copyright and the image use policy before proceeding.
+
+Uploads to Wikimedia Commons
+
+Upload a non-free file
+Uploads locally to the English Wikipedia; must comply with the non-free content criteria
+
+You do not have JavaScript enabled
+Sorry, in order to use this uploading script, JavaScript must be enabled. You can still use the plain Special:Upload page to upload files to the English Wikipedia without JavaScript.
+You are not currently logged in.
+Sorry, in order to use this uploading script and to upload files, you need to be logged in with your named account. Please log in and then try again.
+Your account has not become confirmed yet.
+Sorry, in order to upload files on the English Wikipedia, you need to have a confirmed account. Normally, your account will become confirmed automatically once you have made 10 edits and four days have passed since you created it.     
+You may already be able to upload files on the Wikimedia Commons, but you can't do it on the English Wikipedia just yet. If the file you want to upload has a free license, please go to Commons and upload it there.
+Important note: if you don't want to wait until you are autoconfirmed, you may ask somebody else to upload a file for you at Wikipedia:Files for upload. 
+In very rare cases an administrator may make your account confirmed manually through a request at Wikipedia:Requests for permissions/Confirmed.
+
+
+
+
+
+
+
+
+
+Sorry, a few special characters and character combinations cannot be used in the filename for technical reasons. This goes especially for # < > [ ] | : { } /  and ~~~. Your filename has been modified to avoid these. Please check if it is okay now.
+The filename you chose seems to be very short, or overly generic. Please don't use:
+A file of this name already exists on Commons!
+If you upload your file with this name, you will be masking the existing file and make it inaccessible. Your new file will be displayed everywhere the existing file was previously used.
+This should not be done, except in very rare exceptional cases.
+Please don't upload your file under this name, unless you seriously know what you are doing. Choose a different name for your new file instead.
+A file of this name already exists.
+If you upload your file with this name, you will be overwriting the existing file. Your new file will be displayed everywhere the existing file was previously used. Please don't do this, unless you have a good reason to:
+It is very important that you read through the following options and questions, and provide all required information truthfully and carefully.Thank you for offering to upload a free work.
+Wikipedia loves free files. However, we would love it even more if you uploaded them on our sister project, the Wikimedia Commons.
+Files uploaded on Commons can be used immediately here on Wikipedia as well as on all its sister projects. Uploading files on Commons works just the same as here. Your Wikipedia account will automatically work on Commons too. 
+ Please consider uploading your file on Commons.
+However, if you prefer to do it here instead, you may go ahead with this form. You can also first use this form to collect the information about your file and then send it to Commons from here.
+Please note that by "entirely self-made" we really mean just that. 
+Do not use this section for any of the following:
+Editors who falsely declare such items as their "own work" will be blocked from editing.
+Use this only if there is an explicit licensing statement in the source. 
+The website must explicitly say that the image is released under a license that allows free re-use for any purpose, e.g. the Creative Commons Attribution license. You must be able to point exactly to where it says this.
+If the source website doesn't say so explicitly, please do not upload the file.
+Public Domain means that nobody owns any copyrights on this work. It does not mean simply that it is freely viewable somewhere on the web or that it has been widely used by others. 
+This is not for images you simply found somewhere on the web. Most images on the web are under copyright and belong to somebody, even if you believe the owner won't care about that copyright. If it is in the public domain, you must be able to point to an actual law that makes it so. If you can't point to such a law but merely found this image somewhere, then please do not upload it.
+ Please remember that you will need to demonstrate that:
+This file will be used in the following article:
+Enter the name of exactly one Wikipedia article, without the [[...]] brackets and without the "http://en.wikipedia.org/..." URL code. It has to be an actual article, not a talkpage, template, user page, etc. If you plan to use the file in more than one article, please name only one of them here. Then, after uploading, open the image description page for editing and add your separate explanations for each additional article manually.
+ Example – article okay.
+ This article doesn't exist!
+The article Example could not be found.
+Please check the spelling, and make sure you enter the name of an existing article in which you will include this file.
+If this is an article you are only planning to write, please write it first and upload the file afterwards.
+ This is not an actual encyclopedia article!
+The page Example is not in the main article namespace. Non-free files can only be used in mainspace article pages, not on a user page, talk page, template, etc.
+Please upload this file only if it is going to be used in an actual article.
+If this page is an article draft in your user space, we're sorry, but we must ask you to wait until the page is ready and has been moved into mainspace, and only upload the file after that.
+ This is a disambiguation page!
+The page Example is not a real article, but a disambiguation page pointing to a number of other pages.
+Please check and enter the exact title of the actual target article you meant.
+If neither of these two statements applies, then please do not upload this image.
+This section is not for images used merely to illustrate an article about a person or thing, showing what that person or thing look like.
+In view of this, please explain how the use of this file will be minimal.
+Well, we're very sorry, but if you're not sure about this file's copyright status, or if it doesn't fit into any of the groups above, then:
+Please don't upload it.
+Really, please don't. Even if you think it would make for a great addition to an article. We really take these copyright rules very seriously on Wikipedia. Note that media is assumed to be fully-copyrighted unless shown otherwise; the burden is on the uploader.
+In particular, please don't upload:
+If you are in any doubt, please ask some experienced editors for advice before uploading. People will be happy to assist you at Wikipedia:Media copyright questions. Thank you.
+This is the data that will be submitted to upload:
+
+
+
+Your file is being uploaded. 
+This might take a minute or two, depending on the size of the file and the speed of your internet connection.
+Once uploading is completed, you will find your new file at this link:
+File:Example.jpg
+Your file has been uploaded successfully and can now be found here:
+File:Example.jpg
+Please follow the link and check that the image description page has all the information you meant to include.
+If you want to change the description, just go to the image page, click the "edit" tab at the top of the page and edit just as you would edit any other page. Do not go through this upload form again, unless you want to replace the actual file with a new version.
+To insert this file into an article, you may want to use code similar to the following:
+If you wish to make a link to the file in text, without actually showing the image, for instance when discussing the image on a talk page, you can use the following (mark the ":" after the initial brackets!):
+See Wikipedia:Picture tutorial for more detailed help on how to insert and position images in pages.
+Thank you for using the File Upload Wizard.Please leave your feedback, comments, bug reports or suggestions on the talk page.
+

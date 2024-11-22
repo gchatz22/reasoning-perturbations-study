@@ -1,0 +1,3 @@
+This page contains a list of special pages. Most of the content of these pages is automatically generated and cannot be edited. To suggest a change to the parts that can be edited, find the appropriate text on Special:AllMessages and then request your change on the talk page of the message (using {{editprotected}} to draw the attention of administrators).
+You can also see what message names are used on a page by adding ?uselang=qqx to the end of its URL, e.g. https://en.wikipedia.org/wiki/Special:SpecialPages?uselang=qqx will show (specialpages-summary) in place of this message, which allows you to find MediaWiki:Specialpages-summary.
+For an index of special pages, see Help:SpecialPages.
