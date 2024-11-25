@@ -2,6 +2,8 @@ import os
 import json
 import typer
 from enum import Enum
+from rich import print
+from rich.rule import Rule
 from string import Template
 from random import randrange
 from dotenv import load_dotenv
@@ -104,18 +106,37 @@ def main(
         case Perturbation.IRRELEVANT:
             seen = set()
             for i in range(random_samples):
-                print(">> Sample {}".format(i + 1))
+                print("[bold red]>> Sample {}[/bold red]\n".format(i + 1))
                 random_index = randomly_select_index(seen, len(dataset))
                 datapoint = dataset[random_index]
                 baseline_prompt = pre_processing_baseline(datapoint)
                 experiment_prompt = pre_processing_irrelavant(datapoint, model_provider)
-                print(">>> Question:", datapoint["question"], "\n")
-                print(">>> Correct Answer:", datapoint["answer"], "\n")
-                baseline_response = model_provider.generate(prompt=baseline_prompt)
-                print(">>> Answer w/o irrelevant context:", baseline_response, "\n")
-                experiment_response = model_provider.generate(prompt=experiment_prompt)
-                print(">>> Answer with irrelevant context:", experiment_response, "\n")
+                print(
+                    "[green]>>> Question:[/green][white][not bold] {}[/white][/not bold]\n".format(
+                        datapoint["question"]
+                    ),
+                )
                 print()
+                print(
+                    "[green]>>> Correct Answer:[/green][white][not bold] {}[/white][/not bold]\n".format(
+                        datapoint["answer"]
+                    )
+                )
+                print(Rule(style="green"))
+                baseline_response = model_provider.generate(prompt=baseline_prompt)
+                print(
+                    "[green]>>> Answer w/o irrelevant context:[/green] [white][not bold]{}[/white][/not bold]\n".format(
+                        baseline_response
+                    ),
+                )
+                print(Rule(style="green"))
+                experiment_response = model_provider.generate(prompt=experiment_prompt)
+                print(
+                    "[green]>>> Answer with irrelevant context:[/green][white][not bold] {}[/white][/not bold]\n".format(
+                        experiment_response
+                    ),
+                )
+                print(Rule(style="red bold"))
         case Perturbation.PATHOLOGICAL:
             print("yooo")
         case Perturbation.RELEVANT:
