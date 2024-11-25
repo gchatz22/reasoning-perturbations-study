@@ -3,7 +3,7 @@ from models import LLMBaseModel
 from typing import Dict, Any, List
 
 
-# number are context windows
+# numbers are context windows
 ANTHROPIC_MODELS = {
     "claude-3-5-sonnet-latest": 200000,
 }
@@ -19,7 +19,7 @@ class AnthropicModel(LLMBaseModel):
         self.client = anthropic.Client(api_key=api_key)
 
     def generate(
-        self, prompt: str, max_tokens: int = 2000, temperature: float = 0.7, **kwargs
+        self, prompt: str, max_tokens: int = 2000, temperature: float = 0.2, **kwargs
     ) -> str:
         response = self.client.messages.create(
             messages=[{"role": "user", "content": prompt}],

@@ -1,1 +1,1 @@
-$question. $pathology. Provide the final answer with the prefix ####.
+$question. $pathology. Provide the final numerical answer only with the prefix ####. Any reasoning should happen before the prefix.

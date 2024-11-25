@@ -1,4 +1,4 @@
-$question. Provide the final answer with the prefix ####.
+$question. Provide the final numerical answer only with the prefix ####. Any reasoning should happen before the prefix.
 
 Below is some context you may find useful to answering the question above:
 

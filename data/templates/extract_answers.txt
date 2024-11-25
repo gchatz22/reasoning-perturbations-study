@@ -1,0 +1,5 @@
+Your task is to extract the final answers from two pieces of text and output it in a given format. The format needs to be "<final_answer1>@<final_answer2>". Below are the two pieces of text.
+
+Text 1: $response1
+
+Text 2: $response2

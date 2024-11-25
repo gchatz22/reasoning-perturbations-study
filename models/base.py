@@ -18,7 +18,7 @@ class LLMBaseModel(ABC):
         self.config = kwargs
 
     @abstractmethod
-    def generate(self, prompt: str, temperature: float = 0.7, **kwargs) -> str:
+    def generate(self, prompt: str, temperature: float = 0.2, **kwargs) -> str:
         """
         Generate text from the model given a prompt.
         Subclasses must implement this method.
