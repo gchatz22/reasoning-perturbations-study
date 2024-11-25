@@ -4,7 +4,7 @@ from datasets import load_dataset
 from collections import defaultdict
 
 dataset = load_dataset("openai/gsm8k", "main")
-split = "train"
+split = "test"
 dataset_split = dataset[split]
 
 datapoints_by_reasoning_steps = defaultdict(list)

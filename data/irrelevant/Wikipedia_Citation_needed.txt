@@ -1,4 +1,3 @@
-
 To ensure that all Wikipedia content is verifiable, Wikipedia provides a means for anyone to question an uncited claim. If your work has been tagged, please provide a reliable source for the statement, and discuss if needed.
 You can add a citation by selecting from the drop-down  menu at the top of the editing box. In markup, you can add a citation manually using ref tags. There are also more elaborate ways to cite sources.
 In wiki markup, you can question an uncited claim by inserting a simple {{Citation needed}} tag, or a more comprehensive {{Citation needed|reason=Your explanation here|date=November 2024}}. Alternatively, {{fact}} and {{cn}} will produce the same result. These all display as: 

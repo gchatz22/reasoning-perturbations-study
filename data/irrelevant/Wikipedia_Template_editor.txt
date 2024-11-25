@@ -1,4 +1,3 @@
-
 The template editor user right allows trusted coders to edit templates and modules that have been protected with the template protection level (usually due to a high transclusion count). It also allows those editors to create and modify editnotices for all pages, not just those in their own user and talk pages.[1]
 There are currently 187 template editors, which makes the total number of users with this permission 1,039 (the rest are administrators).
 Editors are permitted to exercise this permission to perform maintenance, answer reasonable edit requests, and make any other simple and generally uncontroversial edits to templates, modules, and editnotices. They are also permitted to enact more complex or controversial edits after those edits are first made to a test sandbox, their technical reliability and their consensus among other informed editors having already been established.

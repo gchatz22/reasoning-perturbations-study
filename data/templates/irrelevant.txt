@@ -1,0 +1,5 @@
+$question. Provide the final answer with the prefix ####.
+
+Below is some context you may find useful to answering the question above:
+
+$irrelevant_text

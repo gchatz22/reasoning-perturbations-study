@@ -1,5 +1,3 @@
-
-
 The MediaWiki rollback user right provides users with a button that will revert, with a single click, the last edit to a given page, along with any consecutive previous edits made by the same editor to that page. It is used to undo problematic edits such as vandalism. Some counter-vandalism tools also require the user to possess the rollback user right to use the tool.
 An editor with rollback user rights will see a button rollback n edits next to relevant revisions on pages such as their watchlist, on user contributions pages (including their own), and on the edit history of pages.
 MediaWiki rollback is enabled and available to all administrators automatically and can be given to other users upon request, subject to the approval of an administrator. A user who has been assigned this right explicitly is called a rollbacker. There are currently 852 administrators and 6,853 rollbackers (7,705 total; however, most of these accounts haven't edited for years), not including global rollbackers and stewards who have been assigned the right across all Wikimedia projects.
