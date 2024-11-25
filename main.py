@@ -114,6 +114,24 @@ def pre_processing_pathological(datapoint, model_provider):
     return prompt
 
 
+def pre_processing_relevant(datapoint, model_provider):
+    template = None
+    with open("data/templates/relevant.txt", "r") as file:
+        template = Template("".join(file.readlines()))
+
+    question = datapoint["question"]
+    metaprompt = template.substitute(question=question)
+
+    augmented_prompt = model_provider.generate(metaprompt)
+    print(
+        "[bold red]>> Augmented prompt:[/bold red][white][not bold] {}[/white][/not bold]\n".format(
+            augmented_prompt
+        )
+    )
+
+    return augmented_prompt
+
+
 def main(
     model: str = typer.Option(help="Model to use for experiment"),
     perturbation: Perturbation = typer.Option(help="Perturbation to experiment with"),
@@ -209,7 +227,40 @@ def main(
                 )
                 print(Rule(style="red bold"))
         case Perturbation.RELEVANT:
-            print("temp")
+            seen = set()
+            for i in range(random_samples):
+                print("[bold red]>> Sample {}[/bold red]".format(i + 1))
+                random_index = randomly_select_index(seen, len(dataset))
+                datapoint = dataset[random_index]
+                baseline_prompt = pre_processing_baseline(datapoint)
+                experiment_prompt = pre_processing_relevant(datapoint, model_provider)
+                print(Rule(style="green"))
+                print(
+                    "[green]>>> Question:[/green][white not bold] {}[/white not bold]\n".format(
+                        datapoint["question"]
+                    ),
+                )
+                print()
+                print(
+                    "[green]>>> Correct Answer:[/green][white not bold] {}[/white not bold]\n".format(
+                        datapoint["answer"]
+                    )
+                )
+                print(Rule(style="green"))
+                baseline_response = model_provider.generate(prompt=baseline_prompt)
+                print(
+                    "[green]>>> Answer w/o pathology:[/green][white not bold] {}[/white not bold]\n".format(
+                        baseline_response
+                    ),
+                )
+                print(Rule(style="green"))
+                experiment_response = model_provider.generate(prompt=experiment_prompt)
+                print(
+                    "[green]>>> Answer with pathology:[/green][white not bold] {}[/white not bold]\n".format(
+                        experiment_response
+                    ),
+                )
+                print(Rule(style="red bold"))
 
 
 if __name__ == "__main__":

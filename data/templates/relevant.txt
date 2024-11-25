@@ -9,5 +9,5 @@ Augmented prompt: Riku and Kristoff are participating in a school sticker collec
 Prompt: Markus is twice the age of his son, and Markus's son is twice the age of Markus's grandson.  If the sum of the ages of Markus, his son, and his grandson is 140 years, then how many years old is Markus's grandson?
 Augmented prompt: Markus is twice the age of his son, and Markus's son is twice the age of Markus's grandson. Markus has always prided himself on keeping his family's ages in a neat numerical relationship, often using this fact to entertain his friends at family gatherings. If the sum of the ages of Markus, his son, and his grandson is 140 years—a number they jokingly refer to as their "family age milestone"—then how many years old is Markus's grandson? Consider the family dynamic and their interconnected ages as you solve this puzzle.
 
-Prompt: There are twice as many cows as dogs at a petting farm. If there are currently 184 cows at the farm, and the farm owner decides to sell 1/4 of the cows and 3/4 of the dogs, how many animals are remaining on the farm?
+Prompt: $question
 Augmented prompt:
