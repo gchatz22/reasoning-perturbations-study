@@ -30,6 +30,7 @@ def randomly_select_index(seen, dataset_size):
     while True:
         rand_index = randrange(dataset_size)
         if rand_index not in seen:
+            seen.add(rand_index)
             return rand_index
 
 
@@ -59,6 +60,7 @@ def pre_processing_irrelavant(datapoint, model_provider):
 
     seen = set()
     irrelevant_text = ""
+    number_of_irrelevant_context = 0
     prompt = template.substitute(question=question, irrelevant_text=irrelevant_text)
     tokenized_prompt = model_provider.tokenize(prompt)
     while len(tokenized_prompt) < token_limit:
@@ -67,6 +69,7 @@ def pre_processing_irrelavant(datapoint, model_provider):
         with open(directory + random_file_name, "r") as file:
             text = "".join(file.readlines())
             irrelevant_text += text
+            number_of_irrelevant_context += len(model_provider.tokenize(text))
 
         prompt = template.substitute(question=question, irrelevant_text=irrelevant_text)
         tokenized_prompt = model_provider.tokenize(prompt)
@@ -76,7 +79,38 @@ def pre_processing_irrelavant(datapoint, model_provider):
         extra_token_ids = tokenized_prompt[-diff:]
         extra = len(model_provider.detokenize(extra_token_ids))
         prompt = prompt[:-extra]
+        number_of_irrelevant_context -= len(extra_token_ids)
 
+    print(
+        "[bold red]>> Number of additional tokens:[/bold red][white][not bold] {}[/white][/not bold]\n".format(
+            number_of_irrelevant_context
+        )
+    )
+
+    return prompt
+
+
+def pre_processing_pathological(datapoint, model_provider):
+    template = None
+    with open("data/templates/pathological.txt", "r") as file:
+        template = Template("".join(file.readlines()))
+
+    question = datapoint["question"]
+    pathologies = []
+    with open("data/pathological/data.txt", "r") as file:
+        pathologies = [line.strip("\n") for line in file.readlines()]
+
+    seen = set()
+    random_index = randomly_select_index(seen, len(pathologies))
+    pathology = pathologies[random_index]
+
+    print(
+        "[bold red]>> Pathology:[/bold red][white][not bold] {}[/white][/not bold]\n".format(
+            pathology
+        )
+    )
+
+    prompt = template.substitute(question=question, pathology=pathology)
     return prompt
 
 
@@ -106,39 +140,74 @@ def main(
         case Perturbation.IRRELEVANT:
             seen = set()
             for i in range(random_samples):
-                print("[bold red]>> Sample {}[/bold red]\n".format(i + 1))
+                print("[bold red]>> Sample {}[/bold red]".format(i + 1))
                 random_index = randomly_select_index(seen, len(dataset))
                 datapoint = dataset[random_index]
                 baseline_prompt = pre_processing_baseline(datapoint)
                 experiment_prompt = pre_processing_irrelavant(datapoint, model_provider)
                 print(
-                    "[green]>>> Question:[/green][white][not bold] {}[/white][/not bold]\n".format(
+                    "[green]>>> Question:[/green][white][not bold] {}[white not bold]\n".format(
                         datapoint["question"]
                     ),
                 )
                 print()
                 print(
-                    "[green]>>> Correct Answer:[/green][white][not bold] {}[/white][/not bold]\n".format(
+                    "[green]>>> Correct Answer:[/green][white not bold] {}[/white not bold]\n".format(
                         datapoint["answer"]
                     )
                 )
                 print(Rule(style="green"))
                 baseline_response = model_provider.generate(prompt=baseline_prompt)
                 print(
-                    "[green]>>> Answer w/o irrelevant context:[/green] [white][not bold]{}[/white][/not bold]\n".format(
+                    "[green]>>> Answer w/o irrelevant context:[/green][white not bold] {}[/white not bold]\n".format(
                         baseline_response
                     ),
                 )
                 print(Rule(style="green"))
                 experiment_response = model_provider.generate(prompt=experiment_prompt)
                 print(
-                    "[green]>>> Answer with irrelevant context:[/green][white][not bold] {}[/white][/not bold]\n".format(
+                    "[green]>>> Answer with irrelevant context:[/green][white not bold] {}[/white not bold]\n".format(
                         experiment_response
                     ),
                 )
                 print(Rule(style="red bold"))
         case Perturbation.PATHOLOGICAL:
-            print("yooo")
+            seen = set()
+            for i in range(random_samples):
+                print("[bold red]>> Sample {}[/bold red]".format(i + 1))
+                random_index = randomly_select_index(seen, len(dataset))
+                datapoint = dataset[random_index]
+                baseline_prompt = pre_processing_baseline(datapoint)
+                experiment_prompt = pre_processing_pathological(
+                    datapoint, model_provider
+                )
+                print(Rule(style="green"))
+                print(
+                    "[green]>>> Question:[/green][white not bold] {}[/white not bold]\n".format(
+                        datapoint["question"]
+                    ),
+                )
+                print()
+                print(
+                    "[green]>>> Correct Answer:[/green][white not bold] {}[/white not bold]\n".format(
+                        datapoint["answer"]
+                    )
+                )
+                print(Rule(style="green"))
+                baseline_response = model_provider.generate(prompt=baseline_prompt)
+                print(
+                    "[green]>>> Answer w/o pathology:[/green][white not bold] {}[/white not bold]\n".format(
+                        baseline_response
+                    ),
+                )
+                print(Rule(style="green"))
+                experiment_response = model_provider.generate(prompt=experiment_prompt)
+                print(
+                    "[green]>>> Answer with pathology:[/green][white not bold] {}[/white not bold]\n".format(
+                        experiment_response
+                    ),
+                )
+                print(Rule(style="red bold"))
         case Perturbation.RELEVANT:
             print("temp")
 

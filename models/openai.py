@@ -21,7 +21,7 @@ class OpenAIModel(LLMBaseModel):
         self.client = OpenAI(api_key=self.api_key)
 
     def generate(
-        self, prompt: str, max_tokens: int = 256, temperature: float = 0.7, **kwargs
+        self, prompt: str, max_tokens: int = 2000, temperature: float = 0.7, **kwargs
     ) -> str:
         response = self.client.chat.completions.create(
             messages=[{"role": "user", "content": prompt}],

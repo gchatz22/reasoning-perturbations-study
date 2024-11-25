@@ -1,1 +1,1 @@
-{}. {}.
+$question. $pathology. Provide the final answer with the prefix ####.
