@@ -249,14 +249,14 @@ def main(
                 print(Rule(style="green"))
                 baseline_response = model_provider.generate(prompt=baseline_prompt)
                 print(
-                    "[green]>>> Answer w/o pathology:[/green][white not bold] {}[/white not bold]\n".format(
+                    "[green]>>> Answer with baseline:[/green][white not bold] {}[/white not bold]\n".format(
                         baseline_response
                     ),
                 )
                 print(Rule(style="green"))
                 experiment_response = model_provider.generate(prompt=experiment_prompt)
                 print(
-                    "[green]>>> Answer with pathology:[/green][white not bold] {}[/white not bold]\n".format(
+                    "[green]>>> Answer with augmented prompt:[/green][white not bold] {}[/white not bold]\n".format(
                         experiment_response
                     ),
                 )
