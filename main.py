@@ -1,6 +1,7 @@
 import re
 import os
 import json
+import math
 import typer
 from enum import Enum
 from rich import print
@@ -16,6 +17,8 @@ from models import (
     ANTHROPIC_MODELS,
     COHERE_MODELS,
     CohereModel,
+    TogetherAIModel,
+    TOGETHERAI_MODELS,
 )
 
 
@@ -30,15 +33,27 @@ class Perturbation(Enum):
 
 
 def load_data():
-    with open("data/gsm8k_test_split.jsonl", "r") as file:
-        return [json.loads(line.strip()) for line in file]
+    parent_dir = "/Users/giannis/Desktop/[6.861] Quantitative Methods for NLP/final_project/data/"
+    path = parent_dir + "datapoints_by_reasoning_steps.jsonl"
+
+    data = []
+    with open(path, "r") as file:
+        for line in file:
+            data.append(json.loads(line.strip()))
+
+    # NOTE: We are essentially taking the distribution and reducing the dataset granularity
+    total_datapoints = sum([len(x["datapoints"]) for x in data])
+    samples_distribution = {
+        entry["steps"]: len(entry["datapoints"]) / total_datapoints for entry in data
+    }
+
+    return data, samples_distribution
 
 
 def randomly_select_index(seen, dataset_size):
     while True:
         rand_index = randrange(dataset_size)
         if rand_index not in seen:
-            seen.add(rand_index)
             return rand_index
 
 
@@ -50,6 +65,25 @@ def pre_processing_baseline(datapoint):
     question = datapoint["question"]
     prompt = template.substitute(question=question)
     return prompt
+
+
+def log_experiment(model_name, perturbation, texts):
+    file_path = "data/experiments/{}/{}.txt".format(model_name, perturbation.value)
+    os.makedirs(os.path.dirname(file_path), exist_ok=True)
+    with open(file_path, "a") as file:
+        for text in texts:
+            file.write(text + "\n")
+        file.write("<SEPARATOR>" + "\n")
+
+
+def parse_seen_datapoints(model_name, perturbation):
+    file_path = "data/experiments/{}/{}.txt".format(model_name, perturbation.value)
+    if os.path.exists(file_path):
+        with open(file_path, "r") as file:
+            content = file.read()
+            ids = re.findall(r"ID:\s*(\d+)", content)
+            return set(ids)
+    return set()
 
 
 def pre_processing_irrelavant(datapoint, model_provider):
@@ -73,6 +107,7 @@ def pre_processing_irrelavant(datapoint, model_provider):
     tokenized_prompt = model_provider.tokenize(prompt)
     while len(tokenized_prompt) < token_limit:
         random_index = randomly_select_index(seen, len(files))
+        seen.add(random_index)
         random_file_name = files[random_index]
         with open(directory + random_file_name, "r") as file:
             text = "".join(file.readlines())
@@ -166,6 +201,7 @@ def pre_processing_pathological(datapoint, model_provider):
 
     seen = set()
     random_index = randomly_select_index(seen, len(pathologies))
+    seen.add(random_index)
     pathology = pathologies[random_index]
 
     print(
@@ -203,10 +239,8 @@ def pre_processing_relevant(datapoint, model_provider):
 def main(
     model: str = typer.Option(help="Model to use for experiment"),
     perturbation: Perturbation = typer.Option(help="Perturbation to experiment with"),
-    random_samples: int = typer.Option(
-        help="Number of random samples to experiment with"
-    ),
 ):
+    TOTAL_SAMPLES = 50
     model_provider = None
 
     if model in OPENAI_MODELS:
@@ -219,131 +253,98 @@ def main(
         )
     elif model in COHERE_MODELS:
         model_provider = CohereModel(api_key=os.getenv("COHERE_KEY"), model_name=model)
+    elif model in TOGETHERAI_MODELS:
+        model_provider = TogetherAIModel(
+            api_key=os.getenv("TOGETHER_AI_KEY"), model_name=model
+        )
 
     if model_provider is None:
         raise Exception("Invalid input model.")
 
-    dataset = load_data()
-    match perturbation:
-        case Perturbation.IRRELEVANT:
-            seen = set()
-            for i in range(random_samples):
-                random_index = randomly_select_index(seen, len(dataset))
-                print(
-                    "[bold red]>> Sample {} out of {}, ID {}[/bold red]".format(
-                        i + 1, random_samples, random_index
+    dataset, samples_distribution = load_data()
+    samples = {k: math.ceil(TOTAL_SAMPLES * v) for k, v in samples_distribution.items()}
+    print(
+        "[bold red]>> Input number of samples was {} but resized to {} due to dataset distribution\n".format(
+            TOTAL_SAMPLES, sum(samples.values())
+        )
+    )
+
+    seen = parse_seen_datapoints(model_provider.model_name, perturbation)
+    for reasoning_steps, num_samples in samples.items():
+        for i in range(num_samples):
+            datapoints = dataset[reasoning_steps]["datapoints"]
+            random_index = randomly_select_index(seen, len(datapoints))
+            datapoint = datapoints[random_index]
+            correct_answer = datapoint["answer"]
+            idd = datapoint["index"]
+            seen.add(idd)
+
+            print(
+                "[bold red]>> Reasoning Steps: {}, ID: {}, Sample {} out of {}[/bold red]".format(
+                    reasoning_steps, idd, i + 1, num_samples
+                )
+            )
+
+            baseline_prompt = pre_processing_baseline(datapoint)
+            experiment_prompt = ""
+
+            match perturbation:
+                case Perturbation.IRRELEVANT:
+                    experiment_prompt = pre_processing_irrelavant(
+                        datapoint, model_provider
                     )
-                )
-                datapoint = dataset[random_index]
-                baseline_prompt = pre_processing_baseline(datapoint)
-                experiment_prompt = pre_processing_irrelavant(datapoint, model_provider)
-                print(
-                    "[green]>>> Question:[/green][white][not bold] {}[white not bold]\n".format(
-                        datapoint["question"]
-                    ),
-                )
-                print(
-                    "[green]>>> Correct Answer:[/green][white not bold] {}[/white not bold]\n".format(
-                        datapoint["answer"]
+                case Perturbation.PATHOLOGICAL:
+                    experiment_prompt = pre_processing_pathological(
+                        datapoint, model_provider
                     )
-                )
-                print(Rule(style="green"))
-                baseline_response = model_provider.generate(prompt=baseline_prompt)
-                print(
-                    "[green]>>> Answer w/o irrelevant context:[/green][white not bold] {}[/white not bold]\n".format(
-                        baseline_response
-                    ),
-                )
-                print(Rule(style="green"))
-                experiment_response = model_provider.generate(prompt=experiment_prompt)
-                print(
-                    "[green]>>> Answer with irrelevant context:[/green][white not bold] {}[/white not bold]\n".format(
-                        experiment_response
-                    ),
-                )
-                print(Rule(style="red bold"))
-        case Perturbation.PATHOLOGICAL:
-            seen = set()
-            for i in range(random_samples):
-                random_index = randomly_select_index(seen, len(dataset))
-                print(
-                    "[bold red]>> Sample {} out of {}, ID {}[/bold red]".format(
-                        i + 1, random_samples, random_index
+                case Perturbation.RELEVANT:
+                    experiment_prompt = pre_processing_relevant(
+                        datapoint, model_provider
                     )
+
+            print(
+                "[green]>>> Question:[/green][white][not bold] {}[white not bold]\n".format(
+                    datapoint["question"]
                 )
-                datapoint = dataset[random_index]
-                correct_answer = datapoint["answer"]
-                baseline_prompt = pre_processing_baseline(datapoint)
-                experiment_prompt = pre_processing_pathological(
-                    datapoint, model_provider
+            )
+            print(
+                "[green]>>> Correct Answer:[/green][white not bold] {}[/white not bold]\n".format(
+                    datapoint["answer"]
                 )
-                print(Rule(style="green"))
-                print(
-                    "[green]>>> Question:[/green][white not bold] {}[/white not bold]\n".format(
-                        datapoint["question"]
+            )
+            print(Rule(style="green"))
+            baseline_response = model_provider.generate(prompt=baseline_prompt)
+            print(
+                "[green]>>> Baseline Answer:[/green][white not bold] {}[/white not bold]\n".format(
+                    baseline_response
+                ),
+            )
+            print(Rule(style="green"))
+            experiment_response = model_provider.generate(prompt=experiment_prompt)
+            print(
+                "[green]>>> Answer in {} experiment:[/green][white not bold] {}[/white not bold]\n".format(
+                    perturbation.value, experiment_response
+                ),
+            )
+            validate_answer(correct_answer, baseline_response, experiment_response)
+            print()
+            print(Rule(style="red bold"))
+
+            log_experiment(
+                model_provider.model_name,
+                perturbation,
+                [
+                    ">> Reasoning Steps: {}, ID: {}, Sample {} out of {}".format(
+                        reasoning_steps, random_index, i + 1, num_samples
                     ),
-                )
-                print()
-                print(
-                    "[green]>>> Correct Answer:[/green][white not bold] {}[/white not bold]\n".format(
-                        correct_answer
-                    )
-                )
-                print(Rule(style="green"))
-                baseline_response = model_provider.generate(prompt=baseline_prompt)
-                print(
-                    "[green]>>> Answer w/o pathology:[/green][white not bold] {}[/white not bold]\n".format(
-                        baseline_response
+                    ">>> Question: {}".format(datapoint["question"]),
+                    ">>> Correct Answer: {}".format(datapoint["answer"]),
+                    ">>> Baseline Answer: {}".format(baseline_response),
+                    ">>> Answer in {} experiment: {}".format(
+                        perturbation.value, experiment_response
                     ),
-                )
-                print(Rule(style="green"))
-                experiment_response = model_provider.generate(prompt=experiment_prompt)
-                print(
-                    "[green]>>> Answer with pathology:[/green][white not bold] {}[/white not bold]\n".format(
-                        experiment_response
-                    ),
-                )
-                validate_answer(correct_answer, baseline_response, experiment_response)
-                print(Rule(style="red bold"))
-        case Perturbation.RELEVANT:
-            seen = set()
-            for i in range(random_samples):
-                random_index = randomly_select_index(seen, len(dataset))
-                print(
-                    "[bold red]>> Sample {} out of {}, ID {}[/bold red]".format(
-                        i + 1, random_samples, random_index
-                    )
-                )
-                datapoint = dataset[random_index]
-                baseline_prompt = pre_processing_baseline(datapoint)
-                experiment_prompt = pre_processing_relevant(datapoint, model_provider)
-                print(Rule(style="green"))
-                print(
-                    "[green]>>> Question:[/green][white not bold] {}[/white not bold]\n".format(
-                        datapoint["question"]
-                    ),
-                )
-                print()
-                print(
-                    "[green]>>> Correct Answer:[/green][white not bold] {}[/white not bold]\n".format(
-                        datapoint["answer"]
-                    )
-                )
-                print(Rule(style="green"))
-                baseline_response = model_provider.generate(prompt=baseline_prompt)
-                print(
-                    "[green]>>> Answer with baseline:[/green][white not bold] {}[/white not bold]\n".format(
-                        baseline_response
-                    ),
-                )
-                print(Rule(style="green"))
-                experiment_response = model_provider.generate(prompt=experiment_prompt)
-                print(
-                    "[green]>>> Answer with augmented prompt:[/green][white not bold] {}[/white not bold]\n".format(
-                        experiment_response
-                    ),
-                )
-                print(Rule(style="red bold"))
+                ],
+            )
 
 
 if __name__ == "__main__":

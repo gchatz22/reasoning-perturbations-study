@@ -6,7 +6,7 @@ import tiktoken
 
 # numbers are context windows
 COHERE_MODELS = {
-    "command-r-08-24": 128000,
+    "command-r-plus-08-2024": 128000,
 }
 
 
@@ -26,14 +26,14 @@ class CohereModel(LLMBaseModel):
             message=prompt,
             temperature=temperature,
             max_tokens=max_tokens,
-            model="command",
+            model=self.model_name,
             **kwargs
         )
         return response.text
 
     def get_metadata(self) -> Dict[str, Any]:
         return {
-            "provider": "OpenAI",
+            "provider": "Cohere",
             "model_name": self.model_name,
         }
 
@@ -41,12 +41,12 @@ class CohereModel(LLMBaseModel):
         self.config.update(kwargs)
 
     def tokenize(self, text) -> List[int]:
-        encoding = tiktoken.encoding_for_model(self.model_name)
-        return encoding.encode(text)
+        response = self.client.tokenize(text=text, model=self.model_name)
+        return response.tokens
 
     def detokenize(self, token_ids) -> str:
-        encoding = tiktoken.encoding_for_model(self.model_name)
-        return encoding.decode(token_ids)
+        response = self.client.detokenize(tokens=token_ids, model=self.model_name)
+        return response.text
 
     def max_token_limit(self) -> int:
-        return OPENAI_MODELS[self.model_name]
+        return COHERE_MODELS[self.model_name]

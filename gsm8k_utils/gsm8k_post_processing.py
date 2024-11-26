@@ -6,7 +6,7 @@ import pandas as pd
 random.seed(10)
 
 parent_dir = (
-    "/Users/giannis/Desktop/[6.861] Quantitative Methods for NLP/final_project/"
+    "/Users/giannis/Desktop/[6.861] Quantitative Methods for NLP/final_project/data/"
 )
 path = parent_dir + "datapoints_by_reasoning_steps.jsonl"
 data = []
@@ -24,14 +24,16 @@ total_number_of_problems = 50
 for entry in data:
     reasoning_steps = entry["steps"]
     datapoints = entry["datapoints"]
-    num_samples = math.ceil(total_number_of_problems * samples[reasoning_steps])
+    num_samples = math.ceil(total_number_of_problems * samples[reasoning_steps]) 
 
     print("Reasoning steps:", reasoning_steps)
     random_indices = random.sample(range(len(datapoints)), num_samples)
     random_samples = [datapoints[i] for i in random_indices]
 
     df = pd.DataFrame(random_samples)
-    path = parent_dir + "data/reasoning-steps-{}.csv".format(reasoning_steps)
+    path = parent_dir + "/reasoning_steps/reasoning-steps-{}.csv".format(
+        reasoning_steps
+    )
     df.to_csv(path)
 
     # for i, sample in enumerate(random_samples, 1):
