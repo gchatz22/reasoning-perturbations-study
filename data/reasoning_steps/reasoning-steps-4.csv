@@ -1,0 +1,61 @@
+,question,answer,index
+0,"Vlad is 6 feet, 3 inches tall. His younger sister is 2 feet, 10 inches tall. How many inches taller is Vlad than his sister?","Vlad = 6 ft * 12 in/ft + 3 = <<6*12+3=75>>75 inches
+Sister = 2 ft * 12 in/ft + 10 = <<2*12+10=34>>34 inches
+75 - 34 = <<75-34=41>>41 inches
+Vlad is 41 inches taller than his sister.
+#### 41",6239
+1,"Amy bought a 15-foot spool of string to cut up into wicks for making candles.   If she cuts up the entire string into an equal number of 6-inch and 12-inch wicks, what is the total number of wicks she will have cut?","15 feet of string is 15*12=<<15*12=180>>180 inches long.
+If for every 6-inch wick she also cuts a 12-inch wick, then the pair of wicks are 6+12=<<6+12=18>>18 inches long.
+Thus, in 180 inches of string, she can cut 180/18=<<180/18=10>>10 pairs of wicks.
+10 pairs of wicks are a total of 10*2=<<10*2=20>>20 wicks
+#### 20",2599
+2,"James decides to make a bathtub full of jello.  For every pound of water, you need 1.5 tablespoons of jello mix.  The bathtub can hold 6 cubic feet of water.  Each cubic foot of water is 7.5 gallons.  A gallon of water weighs 8 pounds.  A tablespoon of jello mix costs $0.50.  How much did he spend to fill his tub?","The tub has 6*7.5=<<6*7.5=45>>45 gallons
+That would weigh 45*8=<<45*8=360>>360 pounds
+So he needs 360*1.5=<<360*1.5=540>>540 tablespoons of jello mix.
+So he spent 540*.5=$<<540*.5=270>>270
+#### 270",4296
+3,"When Michelle makes fresh pasta, she first makes the dough, then she rolls it out and cuts it, and then she hangs it on racks to dry for cooking later. She needs a drying rack for each three pounds of pasta she makes, and it takes two cups of flour to make each pound of pasta dough. She owns three racks right now. How many more drying racks will Michelle need if she makes pasta using three 8-cup bags of flour?","Michelle used 3 * 8 = <<3*8=24>>24 cups of flour in the pasta dough.
+She made 24 / 2 = <<24/2=12>>12 pounds of pasta dough.
+She needs 12 / 3 = <<12/3=4>>4 drying racks for the pasta.
+Thus, Michelle needs 4 - 3 = <<4-3=1>>1 more drying rack.
+#### 1",1620
+4,"There are 141 gold balloons and twice as many silver balloons. If the gold and silver balloons were added to 150 black balloons, how many balloons are there in total?","Gold = <<141=141>>141
+Silver = 141 * 2 = <<141*2=282>>282
+141 + 282 + 150 = <<141+282+150=573>>573
+There are 573 gold, silver, and black balloons in total.
+#### 573",6337
+5,"Apple can run at a rate of 3 miles per hour. Mac can run at a rate of 4 miles per hour. In minutes, how much faster will Mac run a 24 mile race?","First find how fast each runs. Apple = 24 miles / 3 miles per hour = <<24/3=8>>8 hours
+Mac = 24 miles / 4 miles per hour = <<24/4=6>>6 hours.
+Mac runs 8 hours - 6 hours = <<8-6=2>>2 hours faster.
+1 hour = 60 minutes, so, Mac runs faster by 2 hours * 60 minutes = <<2*60=120>>120 minutes.
+#### 120",2926
+6,There are 8 men at a yoga studio with an average weight of 190 pounds and 6 women with an average weight of 120 pounds. What is the average weight of all 14 men and women?,"The total weight for the 8 men is 8 men * 190 pounds per man = <<8*190=1520>>1520 pounds
+The total weight for the 6 women is 6 women * 120 pounds per woman = <<6*120=720>>720 pounds
+The total weight for 14 men and women is 1520 pounds + 720 pounds = <<1520+720=2240>>2240 pounds
+The average weight per person is 2240 pounds / 14 men and women = <<2240/14=160>>160 pounds
+#### 160",6106
+7,"Milly and Floretta are having a water balloon fight in their garden. They use 3 packs of their own water balloons and also use 2 packs of a neighbor’s water balloons. Each pack of water balloons contains 6 balloons. Milly and Floretta fill all of the balloons then split them evenly, but Milly takes an extra 7 balloons when Floretta isn't looking. How many water balloons is Floretta left with?","Milly and Floretta have a total of 3 packs of their own water balloons + 2 packs of the neighbor’s water balloons = <<3+2=5>>5 packs of water balloons.
+So there is a total of 5 packs of water balloons * 6 balloons per pack of water balloons = <<5*6=30>>30 water balloons available.
+As they split them evenly, they each have 30 water balloons / 2 = <<30/2=15>>15 water balloons.
+After Milly steals some balloons, Floretta is left with 15 – 7 = <<15-7=8>>8 water balloons.
+#### 8",3432
+8,"The toothpaste in Anne's family's bathroom contains 105 grams. Anne's dad uses 3 grams at each brushing, her mom uses 2 grams, Anne and her brother use 1 gram each. Each member of the family brushes their teeth three times a day. How many days will it take for the toothpaste to run out?","Anne and her brother use 1 gram + 1 gram = <<1+1=2>>2 grams.
+Anne's dad uses 3 grams and Anne's mom uses 2 grams so together they use 2 grams + 3 grams + 2 grams = <<3+2+2=7>>7 grams/wash
+Each day, the family uses 7 grams/wash * 3 washes/day = <<7*3=21>>21 grams.
+Using that amount daily, the toothpaste will last 105 grams / 21 grams/day = <<105/21=5>>5 days.
+#### 5",1268
+9,There are 20 dolphins in the aqua park. One-fourth of the dolphins are fully trained. Two-third of the remaining dolphins are currently in training and the rest will be trained next month. How many dolphins will be trained next month?,"20 x 1/4 = <<20*1/4=5>>5 dolphins are fully trained.
+So, 20 - 5 = <<20-5=15>>15 dolphins are not yet fully trained.
+15 x 2/3 = <<15*2/3=10>>10 are currently in training.
+Therefore, 15 - 10 = <<15-10=5>>5 dolphins will be trained next month.
+#### 5",7040
+10,Latia wants to buy a Samsung TV worth $1700. She works for a delivery service company for a month earning $10 per hour for a 30-hour workweek. How many more hours does she have to work to buy the TV?,"In a week, Latia earns 30*10 = $<<30*10=300>>300.
+In a month, she earns 300*4 = $<<300*4=1200>>1200.
+If the TV was worth $1700, the total amount she has to work for to buy the TV is 1700-1200 = $<<1700-1200=500>>500.
+Since she earns $10 per hour, she'll have to work for $500/$10 = <<500/10=50>>50 more hours to buy the TV.
+#### 50",2336
+11,"It takes a butterfly egg 120 days to become a butterfly. If each butterfly spends 3 times as much time as a larva as in a cocoon, how long does each butterfly spend in a cocoon?","Let c be the amount of time the butterfly spends in a cocoon and l be the amount of time it spends as a larva. We know that l = 3c and l + c = 120.
+Substituting the first equation into the second equation, we get 3c + c = 120.
+Combining like terms, we get 4c = 120.
+Dividing both sides by 4, we get c = 30.
+#### 30",4159

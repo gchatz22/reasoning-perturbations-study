@@ -1,0 +1,43 @@
+,question,answer,index
+0,"Erin is sorting through the library books to decide which ones to replace. She finds 8 less than 6 times as many obsolete books as damaged books. If she removes 69 books total, how many books were damaged?","Let o be the number of obsolete books and d be the number of damaged books. We know that o + d = 69 and o = 6d - 8.
+Substituting the first equation into the second equation, we get 6d - 8 + d = 69
+Combining like terms, we get 7d - 8 = 69
+Adding 8 to both sides, we get 7d = 77
+Dividing both sides by 7, we get d = 11
+#### 11",4920
+1,"Nicole has three older sisters. After each one outgrows their clothes, they give them to Nicole. They have all outgrown their clothes and have given them all to Nicole. Nicole started with 10 pieces of clothing. Her first older sister had half as many clothes as Nicole. The next oldest sister had 2 more pieces of clothing than Nicole. The oldest had the average of what her three younger sisters had. How many pieces of clothing does Nicole end up with?","The first sister has 5 pieces of clothing because 10 / 2 = <<10/2=5>>5
+The next sister had 12 pieces of clothing because 10 + 2 = <<10+2=12>>12
+The three youngest sisters combined have 27 pieces because 10 + 5 + 12 = <<10+5+12=27>>27
+The oldest has 9 pieces because 27 / 3 = <<27/3=9>>9
+Nicole ends up with 36 pieces of clothing because 10 + 5 + 12 + 9 = <<10+5+12+9=36>>36
+#### 36",3124
+2,"A roadwork company is paving a newly constructed 16-mile road. They use a mixture of pitch and gravel to make the asphalt to pave the road. Each truckloads of asphalt uses two bags of gravel and five times as many bags of gravel as it does barrels of pitch to make. It takes three truckloads of asphalt to pave each mile of road. The company paved 4 miles of road on one day, then one mile less than double that on the second day. How many barrels of pitch will the company need to finish the remaining road on the third day?","On the second day, the company paved 4 * 2 - 1 = <<4*2-1=7>>7 miles.
+The company has 16 - 7 - 4 = <<16-7-4=5>>5 miles of road remaining to pave.
+They will need 3 * 5 = <<3*5=15>>15 truckloads of asphalt to pave 5 miles of road.
+For 15 truckloads, they will need 15 * 2 = <<15*2=30>>30 bags of gravel.
+Thus, the company will need 30 / 5 = <<30/5=6>>6 barrels of pitch to finish the road on the third day.
+#### 6",331
+3,"Leon ordered 3 sets of toy organizers for $78 per set and 2 gaming chairs for $83 each. If there is a delivery fee that is 5% of the total sales, how much did Leon pay?","Three sets of toy organizers cost $78 x 3 = $<<78*3=234>>234.
+Two gaming chairs cost $83 x 2 = $<<83*2=166>>166
+Leon's total orders amount to $234 + $166 = $<<234+166=400>>400.
+Then, the delivery fee is $400 x 5/100 = $<<400*5/100=20>>20.
+So, Leon had to pay a total of $400 + $20 = $<<400+20=420>>420.
+#### 420",4673
+4,"Ann's favorite store was having a summer clearance. For $75 she bought 5 pairs of shorts for $7 each and 2 pairs of shoes for $10 each. She also bought 4 tops, all at the same price. How much did each top cost?","She bought 5 shorts at $7 each so 5*7=$<<5*7=35>>35
+She bought 2 pair of shoes at $10 each so 2*10=$<<2*10=20>>20
+The shorts and shoes cost her 35+20 = $<<35+20=55>>55
+We know she spent 75 total and the shorts and shoes cost $55 which left a difference of 75-55 = $<<75-55=20>>20
+She bought 4 tops for a total of $20 so 20/4 = $5
+#### 5",23
+5,"The Donaldsons pay $15 per hour for babysitting. The Merck family pays $18 per hour and the Hille family pays $20 per hour for babysitting. Layla babysat for the Donaldsons for 7 hours, the Merck family for 6 hours and the Hille family for 3 hours. How many dollars did Layla earn babysitting?","Donaldsons pay $15/hour = 15*7 = $<<15*7=105>>105.
+The Mercks pay $18/hour = 18*6 = $<<18*6=108>>108.
+The Hilles pay $20/hour = 20*3 = <<20*3=60>>60.
+The total amount Layla earned is 105 + 108 + 60 = <<105+108+60=273>>273.
+Layla earned $273 for babysitting.
+#### 273",1916
+6,"Max works for a delivery company as a courier. During one working day, he can deliver a maximum of 35 packages. One week, Max delivered the maximum number of packages, only twice. On two other days, Max unloaded a total of 50 packages, and on one day he unloaded only one-seventh of the maximum possible daily performance. On the last two days, the sum of the packages transported was only fourth-fifth of the maximum daily performance. How many more packages could Max deliver during that week, if he would work at maximum performance?","Max can deliver a maximum of 35 * 7 = <<35*7=245>>245 packages in one week.
+For two days Max has carried the maximum number of packages, which in total means 2 * 35 = <<2*35=70>>70 packages.
+One day Max has carried only 1/7 of the maximum capacity, that is 1/7 * 35 = <<1/7*35=5>>5 packages.
+On two other days, Max delivered only 4/5 * 35 = <<4/5*35=28>>28 packages.
+That means, Max could deliver 245 - 28 - 5 - 70 - 50 = <<245-28-5-70-50=92>>92 more packages.
+#### 92",1130
