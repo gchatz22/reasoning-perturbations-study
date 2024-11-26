@@ -25,9 +25,9 @@ class OpenAIModel(LLMBaseModel):
     ) -> str:
         response = self.client.chat.completions.create(
             messages=[{"role": "user", "content": prompt}],
-            temperature=temperature,
-            max_tokens=max_tokens,
             model=self.model_name,
+            **({"temperature": temperature} if self.model_name != "o1-preview" else {}),
+            **({"max_tokens": max_tokens} if self.model_name != "o1-preview" else {}),
             **kwargs
         )
         return response.choices[0].message.content
