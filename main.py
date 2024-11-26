@@ -6,6 +6,7 @@ import typer
 from enum import Enum
 from rich import print
 from rich.rule import Rule
+from typing import Optional
 from string import Template
 from random import randrange
 from dotenv import load_dotenv
@@ -50,11 +51,15 @@ def load_data():
     return data, samples_distribution
 
 
-def randomly_select_index(seen, dataset_size):
+def randomly_select_index(seen, dataset_size, exit_after=None):
+    counter = 0
     while True:
         rand_index = randrange(dataset_size)
         if rand_index not in seen:
             return rand_index
+        counter += 1
+        if exit_after and counter > exit_after:
+            return None
 
 
 def pre_processing_baseline(datapoint):
@@ -141,33 +146,37 @@ def validate_answer(correct_answer, baseline_response, experiment_response):
     extracted_experiment_response = re.findall(pattern, experiment_response)
 
     if len(extracted_baseline_response) != 1 or len(extracted_experiment_response) != 1:
-        print(
-            "[red]Could not extract answers, extracting with an extractor model...[/red]"
-        )
-        extractor_provider = OpenAIModel(
-            api_key=os.getenv("OPENAI_API_KEY"), model_name="gpt-4o"
-        )
+        print("[red]Could not extract answers.[/red]")
+        return extracted_correct_answer, "", ""
+        # NOTE Using LLM to extract answer. Not consistent and spends $$, commenting out
+        # since manual investigation of results will happen with way
+        # print(
+        #     "[red]Could not extract answers, extracting with an extractor model...[/red]"
+        # )
+        # extractor_provider = OpenAIModel(
+        #     api_key=os.getenv("OPENAI_API_KEY"), model_name="gpt-4o"
+        # )
 
-        template = None
-        with open("data/templates/extract_answers.txt", "r") as file:
-            template = Template("".join(file.readlines()))
+        # template = None
+        # with open("data/templates/extract_answers.txt", "r") as file:
+        #     template = Template("".join(file.readlines()))
 
-        extractor_prompt = template.substitute(
-            response1=extracted_baseline_response,
-            response2=extracted_experiment_response,
-        )
-        extractor_response = extractor_provider.generate(prompt=extractor_prompt)
-        try:
-            extracted_baseline_response, extracted_experiment_response = (
-                extractor_response.split("@")
-            )
-        except Exception:
-            print(
-                "[red]Could not extract answers. Raw model extractor response: {}[/red]".format(
-                    extractor_response
-                )
-            )
-            return
+        # extractor_prompt = template.substitute(
+        #     response1=extracted_baseline_response,
+        #     response2=extracted_experiment_response,
+        # )
+        # extractor_response = extractor_provider.generate(prompt=extractor_prompt)
+        # try:
+        #     extracted_baseline_response, extracted_experiment_response = (
+        #         extractor_response.split("@")
+        #     )
+        # except Exception:
+        #     print(
+        #         "[red]Could not extract answers. Raw model extractor response: {}[/red]".format(
+        #             extractor_response
+        #         )
+        #     )
+        #     return
     else:
         extracted_baseline_response = extracted_baseline_response[0].strip(" ")
         extracted_experiment_response = extracted_experiment_response[0].strip(" ")
@@ -186,6 +195,11 @@ def validate_answer(correct_answer, baseline_response, experiment_response):
             extracted_experiment_response,
             "✅" if extracted_experiment_response == extracted_correct_answer else "❌",
         )
+    )
+    return (
+        extracted_correct_answer,
+        extracted_baseline_response,
+        extracted_experiment_response,
     )
 
 
@@ -239,6 +253,12 @@ def pre_processing_relevant(datapoint, model_provider):
 def main(
     model: str = typer.Option(help="Model to use for experiment"),
     perturbation: Perturbation = typer.Option(help="Perturbation to experiment with"),
+    restart_from_reasoning_steps: Optional[int] = typer.Option(
+        None, help="Reasoning steps to restart from"
+    ),
+    restart_from_sample: Optional[int] = typer.Option(
+        None, help="Sample to restart from"
+    ),
 ):
     TOTAL_SAMPLES = 50
     model_provider = None
@@ -271,9 +291,34 @@ def main(
 
     seen = parse_seen_datapoints(model_provider.model_name, perturbation)
     for reasoning_steps, num_samples in samples.items():
+        if (
+            restart_from_reasoning_steps
+            and reasoning_steps < restart_from_reasoning_steps
+        ):
+            continue
+
         for i in range(num_samples):
-            datapoints = dataset[reasoning_steps]["datapoints"]
-            random_index = randomly_select_index(seen, len(datapoints))
+            if (
+                restart_from_reasoning_steps
+                and reasoning_steps <= restart_from_reasoning_steps
+                and restart_from_sample
+                and i + 1 < restart_from_sample
+            ):
+                continue
+
+            datapoints = [x for x in dataset if x["steps"] == reasoning_steps][0][
+                "datapoints"
+            ]
+            random_index = randomly_select_index(seen, len(datapoints), exit_after=10)
+            if random_index is None:
+                # NOTE: This is a heuristic for reasoning steps distributions that only have a few samples
+                # and are already logged as an experiment. Not ideal but works :).
+                print(
+                    "[bold red]>> Skipping {} reasoning steps sample because I couldn't find an unseen random index\n".format(
+                        reasoning_steps
+                    )
+                )
+                continue
             datapoint = datapoints[random_index]
             correct_answer = datapoint["answer"]
             idd = datapoint["index"]
@@ -326,7 +371,11 @@ def main(
                     perturbation.value, experiment_response
                 ),
             )
-            validate_answer(correct_answer, baseline_response, experiment_response)
+            (
+                extracted_correct_answer,
+                extracted_baseline_response,
+                extracted_experiment_response,
+            ) = validate_answer(correct_answer, baseline_response, experiment_response)
             print()
             print(Rule(style="red bold"))
 
@@ -335,13 +384,22 @@ def main(
                 perturbation,
                 [
                     ">> Reasoning Steps: {}, ID: {}, Sample {} out of {}".format(
-                        reasoning_steps, random_index, i + 1, num_samples
+                        reasoning_steps, idd, i + 1, num_samples
                     ),
                     ">>> Question: {}".format(datapoint["question"]),
                     ">>> Correct Answer: {}".format(datapoint["answer"]),
                     ">>> Baseline Answer: {}".format(baseline_response),
                     ">>> Answer in {} experiment: {}".format(
                         perturbation.value, experiment_response
+                    ),
+                    ">>>> Extracted Correct Answer: {}".format(
+                        extracted_correct_answer
+                    ),
+                    ">>>> Extracted Baseline Response: {}".format(
+                        extracted_baseline_response
+                    ),
+                    ">>>> Extracted Experiment Response: {}".format(
+                        extracted_experiment_response
                     ),
                 ],
             )
