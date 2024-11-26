@@ -5,10 +5,10 @@ Capitalize every vowel in words that have more than three letters
 End every sentence with an exclamation mark, regardless of tone
 Replace every instance of "and" with "&" and "to" with "2"
 Write all adjectives in uppercase letters
-Keep the basic laws of physics in mind while writing
-Make sure your punctuation is formatted well
+Begin every sentence with a cheerful exclamation of surprise like "Wow!" or "Gosh!"
+Write as if you're an ancient philosopher pondering life’s mysteries
 Remember to blink occasionally while writing your response
-Answer the following question quickly
+Answer the following question quickly and make sure to catch your breath
 Write your response as if you are whispering
 Incorporate the sound of silence into your explanation
 Insert the word "perhaps" before every noun
