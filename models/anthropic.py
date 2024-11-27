@@ -43,12 +43,12 @@ class AnthropicModel(LLMBaseModel):
         self.config.update(kwargs)
 
     def tokenize(self, text) -> List[int]:
-        # NOTE This is incorrect but Anthropic provide no trivial way to tokenize. This serves as a rough estimate
+        # NOTE This is incorrect but Anthropic provide no trivial way to tokenize. This serves as a rough estimate.
         encoding = tiktoken.encoding_for_model("gpt-4o")
         return encoding.encode(text)
 
     def detokenize(self, token_ids) -> str:
-        # NOTE This is incorrect but Anthropic provide no trivial way to detokenize. This serves as a rough estimate
+        # NOTE This is incorrect but Anthropic provide no trivial way to detokenize. This serves as a rough estimate.
         encoding = tiktoken.encoding_for_model("gpt-4o")
         return encoding.decode(token_ids)
 
