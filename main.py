@@ -73,6 +73,8 @@ def pre_processing_baseline(datapoint):
 
 
 def log_experiment(model_name, perturbation, texts):
+    if "/" in model_name:
+        model_name = model_name.split("/")[1]
     file_path = "data/experiments/{}/{}.txt".format(model_name, perturbation.value)
     os.makedirs(os.path.dirname(file_path), exist_ok=True)
     with open(file_path, "a") as file:
