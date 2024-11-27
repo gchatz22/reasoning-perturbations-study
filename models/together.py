@@ -10,7 +10,7 @@ TOGETHERAI_MODELS = {
     "meta-llama/Meta-Llama-3.1-8B-Instruct-Turbo": 128000,
     "meta-llama/Llama-3.2-3B-Instruct-Turbo": 128000,
     "google/gemma-2-9b-it": 8192,
-    "google/gemma-2-27b-it": 200000,
+    "google/gemma-2-27b-it": 8192,
     "mistralai/Mistral-7B-Instruct-v0.3": 32768,
     "mistralai/Mixtral-8x22B-Instruct-v0.1": 64000,
 }
