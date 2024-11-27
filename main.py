@@ -3,13 +3,13 @@ import os
 import json
 import math
 import typer
-from enum import Enum
 from rich import print
 from rich.rule import Rule
 from typing import Optional
 from string import Template
 from random import randrange
 from dotenv import load_dotenv
+from constants import Perturbation, TOTAL_SAMPLES, SEPARATOR
 
 from models import (
     OpenAIModel,
@@ -25,12 +25,6 @@ from models import (
 
 load_dotenv()
 app = typer.Typer()
-
-
-class Perturbation(Enum):
-    IRRELEVANT = "irrelevant"
-    PATHOLOGICAL = "pathological"
-    RELEVANT = "relevant"
 
 
 def load_data():
@@ -80,7 +74,7 @@ def log_experiment(model_name, perturbation, texts):
     with open(file_path, "a") as file:
         for text in texts:
             file.write(text + "\n")
-        file.write("<SEPARATOR>" + "\n")
+        file.write(SEPARATOR + "\n")
 
 
 def parse_seen_datapoints(model_name, perturbation):
@@ -262,7 +256,6 @@ def main(
         None, help="Sample to restart from"
     ),
 ):
-    TOTAL_SAMPLES = 50
     model_provider = None
 
     if model in OPENAI_MODELS:
