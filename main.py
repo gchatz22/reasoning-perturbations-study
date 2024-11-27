@@ -34,7 +34,7 @@ class Perturbation(Enum):
 
 
 def load_data():
-    parent_dir = "/Users/giannis/Desktop/[6.861] Quantitative Methods for NLP/final_project/data/"
+    parent_dir = "data/"
     path = parent_dir + "datapoints_by_reasoning_steps.jsonl"
 
     data = []
