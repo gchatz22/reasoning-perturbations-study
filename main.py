@@ -247,9 +247,11 @@ def pre_processing_combo(question, model_provider):
     augmented_prompt = pre_processing_relevant(
         question=question, model_provider=model_provider
     )
+    augmented_prompt = ".".join(augmented_prompt.split(".")[:-2])
     experiment_prompt = pre_processing_pathological(
         question=augmented_prompt, model_provider=model_provider
     )
+    print("experiment_prompt:", experiment_prompt)
     return experiment_prompt
 
 
