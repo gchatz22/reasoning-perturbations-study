@@ -87,53 +87,6 @@ def parse_seen_datapoints(model_name, perturbation):
     return set()
 
 
-def pre_processing_irrelavant(datapoint, model_provider):
-    template = None
-    with open("data/templates/irrelevant.txt", "r") as file:
-        template = Template("".join(file.readlines()))
-
-    question = datapoint["question"]
-    # NOTE: utilize 90% of context window to prevent potential overflow
-    token_limit = round(model_provider.max_token_limit() * 0.9)
-
-    directory = "data/irrelevant/"
-    files = [
-        f for f in os.listdir(directory) if os.path.isfile(os.path.join(directory, f))
-    ]
-
-    seen = set()
-    irrelevant_text = ""
-    number_of_irrelevant_context = 0
-    prompt = template.substitute(question=question, irrelevant_text=irrelevant_text)
-    tokenized_prompt = model_provider.tokenize(prompt)
-    while len(tokenized_prompt) < token_limit:
-        random_index = randomly_select_index(seen, len(files))
-        seen.add(random_index)
-        random_file_name = files[random_index]
-        with open(directory + random_file_name, "r") as file:
-            text = "".join(file.readlines())
-            irrelevant_text += text
-            number_of_irrelevant_context += len(model_provider.tokenize(text))
-
-        prompt = template.substitute(question=question, irrelevant_text=irrelevant_text)
-        tokenized_prompt = model_provider.tokenize(prompt)
-
-    if len(tokenized_prompt) > token_limit:
-        diff = len(tokenized_prompt) - token_limit
-        extra_token_ids = tokenized_prompt[-diff:]
-        extra = len(model_provider.detokenize(extra_token_ids))
-        prompt = prompt[:-extra]
-        number_of_irrelevant_context -= len(extra_token_ids)
-
-    print(
-        "[bold red]>> Number of additional tokens:[/bold red][white][not bold] {}[/white][/not bold]\n".format(
-            number_of_irrelevant_context
-        )
-    )
-
-    return prompt
-
-
 def validate_answer(correct_answer, baseline_response, experiment_response):
     # try to extract with regex
     pattern = r"####\s*([^\s]+)"
@@ -199,12 +152,57 @@ def validate_answer(correct_answer, baseline_response, experiment_response):
     )
 
 
-def pre_processing_pathological(datapoint, model_provider):
+def pre_processing_irrelavant(question, model_provider):
+    template = None
+    with open("data/templates/irrelevant.txt", "r") as file:
+        template = Template("".join(file.readlines()))
+
+    # NOTE: utilize 90% of context window to prevent potential overflow
+    token_limit = round(model_provider.max_token_limit() * 0.9)
+
+    directory = "data/irrelevant/"
+    files = [
+        f for f in os.listdir(directory) if os.path.isfile(os.path.join(directory, f))
+    ]
+
+    seen = set()
+    irrelevant_text = ""
+    number_of_irrelevant_context = 0
+    prompt = template.substitute(question=question, irrelevant_text=irrelevant_text)
+    tokenized_prompt = model_provider.tokenize(prompt)
+    while len(tokenized_prompt) < token_limit:
+        random_index = randomly_select_index(seen, len(files))
+        seen.add(random_index)
+        random_file_name = files[random_index]
+        with open(directory + random_file_name, "r") as file:
+            text = "".join(file.readlines())
+            irrelevant_text += text
+            number_of_irrelevant_context += len(model_provider.tokenize(text))
+
+        prompt = template.substitute(question=question, irrelevant_text=irrelevant_text)
+        tokenized_prompt = model_provider.tokenize(prompt)
+
+    if len(tokenized_prompt) > token_limit:
+        diff = len(tokenized_prompt) - token_limit
+        extra_token_ids = tokenized_prompt[-diff:]
+        extra = len(model_provider.detokenize(extra_token_ids))
+        prompt = prompt[:-extra]
+        number_of_irrelevant_context -= len(extra_token_ids)
+
+    print(
+        "[bold red]>> Number of additional tokens:[/bold red][white][not bold] {}[/white][/not bold]\n".format(
+            number_of_irrelevant_context
+        )
+    )
+
+    return prompt
+
+
+def pre_processing_pathological(question, model_provider):
     template = None
     with open("data/templates/pathological.txt", "r") as file:
         template = Template("".join(file.readlines()))
 
-    question = datapoint["question"]
     pathologies = []
     with open("data/pathological/data.txt", "r") as file:
         pathologies = [line.strip("\n") for line in file.readlines()]
@@ -224,12 +222,11 @@ def pre_processing_pathological(datapoint, model_provider):
     return prompt
 
 
-def pre_processing_relevant(datapoint, model_provider):
+def pre_processing_relevant(question, model_provider):
     template = None
     with open("data/templates/relevant.txt", "r") as file:
         template = Template("".join(file.readlines()))
 
-    question = datapoint["question"]
     metaprompt = template.substitute(question=question)
 
     augmented_prompt = model_provider.generate(prompt=metaprompt)
@@ -244,6 +241,16 @@ def pre_processing_relevant(datapoint, model_provider):
 
     augmented_prompt = template.substitute(question=augmented_prompt)
     return augmented_prompt
+
+
+def pre_processing_combo(question, model_provider):
+    augmented_prompt = pre_processing_relevant(
+        question=question, model_provider=model_provider
+    )
+    experiment_prompt = pre_processing_pathological(
+        question=augmented_prompt, model_provider=model_provider
+    )
+    return experiment_prompt
 
 
 def main(
@@ -331,15 +338,19 @@ def main(
             match perturbation:
                 case Perturbation.IRRELEVANT:
                     experiment_prompt = pre_processing_irrelavant(
-                        datapoint, model_provider
+                        datapoint["question"], model_provider
                     )
                 case Perturbation.PATHOLOGICAL:
                     experiment_prompt = pre_processing_pathological(
-                        datapoint, model_provider
+                        datapoint["question"], model_provider
                     )
                 case Perturbation.RELEVANT:
                     experiment_prompt = pre_processing_relevant(
-                        datapoint, model_provider
+                        datapoint["question"], model_provider
+                    )
+                case Perturbation.COMBO:
+                    experiment_prompt = pre_processing_combo(
+                        datapoint["question"], model_provider
                     )
 
             print(
