@@ -251,7 +251,6 @@ def pre_processing_combo(question, model_provider):
     experiment_prompt = pre_processing_pathological(
         question=augmented_prompt, model_provider=model_provider
     )
-    print("experiment_prompt:", experiment_prompt)
     return experiment_prompt
 
 
