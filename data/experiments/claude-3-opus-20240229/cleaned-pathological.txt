@@ -1138,7 +1138,7 @@ Total earnings for the year: $109,200 + $5,000 = $114,200
 >>> Answer in pathological experiment: John will receive a one-time monetary reward of $5000 for winning the award at work. Additionally, his salary will increase by 5% from $2000 per week to $2100 per week. Since he will receive the award on the first day of the year, he will earn the increased salary for all 52 weeks of the year. To calculate his total earnings for the year, the one-time reward will be added to his annual salary. His annual salary will be calculated by multiplying his new weekly salary of $2100 by 52 weeks.
 
 ####$114,200
->>>> Extracted Correct Answer: 11400
+>>>> Extracted Correct Answer: 114200
 >>>> Extracted Baseline Response: 114200
 >>>> Extracted Experiment Response: 114200
 <SEPARATOR>
