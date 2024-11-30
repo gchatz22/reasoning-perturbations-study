@@ -1097,18 +1097,19 @@ The cards he sold were 2/3 of his collection because 1 - (1/3) = 2/3
 He started with 150 cards because 100 / (2/3) = <<100/(2/3)=150>>150
 #### 150
 >>> Baseline Answer: Let's solve this step by step:
-1. Kenny needs $100 for the ticket
-2. He wants $50 in spending cash
-3. Total money needed = $150
-4. Each card sells for $1.5
-5. He keeps 1/3 of his cards
-6. Let x be the total number of cards
-7. Cards sold = 2x/3
-8. Money from sales = 2x/3 * $1.5 = x
-9. x = $150
-10. x = 100 cards
+1. Kenny needs $100 for the ticket and wants $50 in spending cash, so total money needed is $150
+2. He sells cards at $1.5 each
+3. He keeps 1/3 of his cards and sells 2/3
+4. Let x be the total number of cards
+5. Money from selling cards = (2/3)x * $1.5
+6. This money must equal $150
+7. (2/3)x * $1.5 = $150
+8. x * $1.5 = $150 * (3/2)
+9. x * $1.5 = $225
+10. x = $225 / $1.5
+11. x = 150
 
-####100
+####150
 >>> Answer in pathological experiment: Kenny will determine the total number of cards by working backwards from his goal. He will need $100 for the ticket and $50 for spending cash, totaling $150. Since he will sell each card for $1.5 and keep 1/3 of his collection, he will need to calculate the total number of cards that will result in selling enough to reach $150.
 
 If he keeps 1/3 of the cards, he will sell 2/3 of the cards. The money from selling 2/3 of the cards will need to equal $150. Let x be the total number of cards.
@@ -1120,7 +1121,7 @@ He will divide: x = 150
 
 ####150
 >>>> Extracted Correct Answer: 150
->>>> Extracted Baseline Response: 100
+>>>> Extracted Baseline Response: 150
 >>>> Extracted Experiment Response: 150
 <SEPARATOR>
 >> Reasoning Steps: 4, ID: 1008, Sample 11 out of 12
@@ -1758,20 +1759,19 @@ Thus, on the first day, they started with B = 78 - 59 = <<19=19>>19 bandages.
 
 4. Let x be the initial number of bandages
 
-5. Tracking bandages:
-   x - 38 + 50 = remaining after first day
-   remaining after first day - 28 + 50 = remaining after second day
-   remaining after second day - 25 + 100 = 78 (final remaining)
+5. Calculate total bandages:
+   x + 50 - 38 - 28 + 100 - 25 = 78
 
-6. Solving the equation:
-   x - 38 + 50 - 28 + 50 - 25 + 100 = 78
-   x + 109 = 78
-   x = -31
+6. Solve the equation:
+   x + 50 - 38 - 28 + 100 - 25 = 78
+   x + 59 = 78
+   x = 19
 
-7. But we can't have negative bandages, so the initial number is 31.
+7. Verify:
+   19 (initial) + 50 (first order) - 38 (first day use) - 28 (second day use) + 100 (third day order) - 25 (third day use) = 78 ✓
 
-####31
->>> Answer in pathological experiment: Okay, let's solve this like a fun puzzle! 
+####19
+>>> Answer in pathological experiment: Okay, let's solve this like a fun puzzle!
 
 First, let's track the bandages:
 - Day 1: They used 38 bandages and ordered 1 bulk pack (50 bandages)
@@ -1779,18 +1779,20 @@ First, let's track the bandages:
 - Day 3: They ordered 2 bulk packs (100 bandages) and used only 25 bandages (half a pack)
 - At the end of day 3, they have 78 bandages left
 
-Let's work backwards to find how many they started with:
-1. They have 78 bandages at the end
-2. On day 3, they added 100 bandages and used 25
-3. So before day 3, they had: 78 - 100 + 25 = 3 bandages
-4. On day 2, they used 28 bandages
-5. On day 1, they used 38 bandages and added 50
-6. So their starting number is: 3 + 28 + 38 - 50 = 19
+Let's work backwards:
+1. Start with 78 bandages at the end
+2. Subtract the 2 bulk packs they ordered (100 bandages)
+3. Add back the 25 bandages they used on day 3
+4. Subtract the 28 bandages used on day 2
+5. Subtract the 38 bandages used on day 1
 
-####19
+So the math looks like this:
+78 + 100 - 25 - 28 - 38 = 87
+
+####87
 >>>> Extracted Correct Answer: 19
->>>> Extracted Baseline Response: 31
->>>> Extracted Experiment Response: 19
+>>>> Extracted Baseline Response: 19
+>>>> Extracted Experiment Response: 87
 <SEPARATOR>
 >> Reasoning Steps: 9, ID: 500, Sample 1 out of 1
 >>> Question: Together Lily, David, and Bodhi collected 43 insects. Lily found 7 more than David. David found half of what Bodhi found. How many insects did Lily find?

@@ -9,8 +9,8 @@ from typing import Optional
 from string import Template
 from random import randrange
 from dotenv import load_dotenv
-from constants import Perturbation, TOTAL_SAMPLES, SEPARATOR
 
+from constants import Perturbation, TOTAL_SAMPLES, SEPARATOR
 from models import (
     OpenAIModel,
     AnthropicModel,
