@@ -174,7 +174,7 @@ Then double the number of cookies to find how many carrots sticks he has to eat:
 >>> Correct Answer: Monica is has 6 gifts for family + 4 gifts for friends + 2 gifts for teachers = <<6+4+2=12>>12 gifts to wrap.
 Her ribbon can be divided equally 144 inches of ribbon / 12 gifts = <<144/12=12>>12 inches of ribbon per gift.
 #### 12
->>> Baseline Answer: #### 8
+>>> Baseline Answer: #### 12
 
 Monica has 12 gifts to wrap in total, and she wants to use her ribbon to make a bow for each gift. To find out how many inches of ribbon she can use for each bow, we divide the total ribbon length by the number of gifts:
 
@@ -183,7 +183,7 @@ Monica has 12 gifts to wrap in total, and she wants to use her ribbon to make a 
 Since she wants to make a bow for each gift, she can use 12 inches of ribbon for each bow.
 >>> Answer in relevant experiment: #### 12 inches
 >>>> Extracted Correct Answer: 12
->>>> Extracted Baseline Response: 8
+>>>> Extracted Baseline Response: 12
 >>>> Extracted Experiment Response: 12
 <SEPARATOR>
 >> Reasoning Steps: 2, ID: 589, Sample 12 out of 13
@@ -444,47 +444,10 @@ The fraction from the ratio representing the number of women is 9/14, and since 
 If 20 women alight from the bus at the next stop, the number of women remaining on the bus becomes 54-20=<<54-20=34>>34
 #### 34
 >>> Baseline Answer: #### 26
->>> Answer in relevant experiment: The initial number of women on the bus can be calculated using the given ratio. Let's denote the number of men as $M$ and the number of women as $W$.
-
-We have:
-
-$$
-\begin{equation*}
-    \frac{M}{W} = \frac{5}{9} \, .
-\end{equation*}
-$$
-
-Given the total number of passengers is $84$, we can set up the equation:
-
-$$
-\begin{equation*}
-    M + W = 84 \, .
-\end{equation*}
-$$
-
-Substituting the ratio expression for $M/W$ into the equation, we get:
-
-$$
-\begin{align*}
-    \frac{5}{9}W + W & = 84 \\
-    \frac{14}{9}W & = 84 \\
-    W & = \frac{84 \cdot 9}{14} \\
-    W & = 54 \, .
-\end{align*}
-$$
-
-So, initially, there were $54$ women on the bus. After $20$ women alight, the number remaining is:
-
-$$
-\begin{align*}
-    54 - 20 & = 34 \, .
-\end{align*}
-$$
-
-#### 34
+>>> Answer in relevant experiment: #### 38
 >>>> Extracted Correct Answer: 34
 >>>> Extracted Baseline Response: 26
->>>> Extracted Experiment Response: 34
+>>>> Extracted Experiment Response: 38
 <SEPARATOR>
 >> Reasoning Steps: 3, ID: 1057, Sample 13 out of 15
 >>> Question: Jill and her friends watch 4 movies every Saturday and half the number of movies on Sunday than on Saturday. If they watch movies every weekend, how many movies can they watch in 4 weeks?
@@ -676,16 +639,18 @@ The second route took 240/80=<<240/80=3>>3 hours
 So in total he drove 3+3=<<3+3=6>>6 hours
 #### 6
 >>> Baseline Answer: #### 7.5 hours.
->>> Answer in relevant experiment: John's trip to his friend's house at 70 mph for a distance of 200 miles would take 200/70 = 2.86 hours. With the detour, the total distance becomes 200 + 10 = 210 miles, adding 10/70 = 0.14 hours to the journey. So, the trip to his friend's house took 2.86 + 0.14 = 3 hours.
+>>> Answer in relevant experiment: To calculate the total time for the trip, we need to find the time taken for each leg of the journey and then add them together.
 
-For the return journey, John travels at 80 mph for 240 miles, which takes 240/80 = 3 hours.
+For the first leg, John covers 200 miles at 70 mph. This takes him 200/70 = 2.857 hours (to 3 decimal places).
 
-The entire trip, therefore, took 3 + 3 = 6 hours.
+For the second leg, he travels 240 miles at 80 mph, which takes 240/80 = 3 hours.
 
-#### 6 hours.
+Now we add the times together: 2.857 + 3 = 5.857 hours.
+
+#### 5.857 hours.
 >>>> Extracted Correct Answer: 6
 >>>> Extracted Baseline Response: 7.5
->>>> Extracted Experiment Response: 6
+>>>> Extracted Experiment Response: 5.857
 <SEPARATOR>
 >> Reasoning Steps: 4, ID: 354, Sample 6 out of 12
 >>> Question: Annabelle is saving for a phone that costs $400. She already has $80 in her savings. Her first job, where she earns $10 per hour, pays her for 20 hours of work. She is also paid for 15 hours of work at her second job, where she earns $5 an hour. In dollars, how much money does Annabelle still need to save?

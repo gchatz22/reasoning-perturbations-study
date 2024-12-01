@@ -1153,17 +1153,15 @@ Colby took 3 less than the number of fries that Kyle had taken, removing 5-3=<<5
 If we let X be the number of fries given to Griffin by Ginger, then 24-5-10-2+x=27
 Thus, Ginger had given Griffin x=20 fries
 #### 20
->>> Baseline Answer: Griffin started with 24 fries. Kyle took 5, so Griffin had 24 - 5 = 19. Billy took twice as many as Kyle, so Billy took 5 * 2 = 10. Griffin had 19 - 10 = 9. 
+>>> Baseline Answer: Griffin started with 24 fries. Kyle took 5, so Griffin had 24 - 5 = 19. Billy took twice as many as Kyle, so Billy took 5 * 2 = 10 fries. Now Griffin had 19 - 10 = 9 fries.
 
-Colby took 3 less than Kyle, so Colby took 5 - 3 = 2. Before Colby took the fries, Griffin had 9 + 2 = 11. 
+Colby took 3 less than Kyle, so Colby took 5 - 3 = 2 fries. Now Griffin had 9 - 2 = 7 fries before Ginger gave him some.
 
-After Ginger gave Griffin some fries, Griffin had 11 + x fries. Colby took 2, so Griffin had 11 + x - 2 = 27 (since Griffin ended up with 27 fries). 
+Since Griffin ended up with 27 fries, we need to subtract the fries he had before Ginger gave him some from the total he ended up with to find out how many Ginger gave him.
 
-11 + x - 2 = 27
-11 + x = 29
-x = 18
+27 (final fries) - 7 (fries before Ginger gave some) = 20.
 
-####18
+####20
 >>> Answer in relevant experiment: To find out how many fries Ginger gave Griffin, we need to track the changes in the number of fries Griffin had.
 
 Griffin initially had 24 fries. 
@@ -1175,7 +1173,7 @@ Since Griffin ended up with 27 fries, the number of fries Ginger gave him can be
 
 ####20
 >>>> Extracted Correct Answer: 20
->>>> Extracted Baseline Response: 18
+>>>> Extracted Baseline Response: 20
 >>>> Extracted Experiment Response: 20
 <SEPARATOR>
 >> Reasoning Steps: 5, ID: 603, Sample 2 out of 7

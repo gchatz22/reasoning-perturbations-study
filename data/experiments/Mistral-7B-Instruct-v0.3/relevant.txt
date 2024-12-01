@@ -316,23 +316,17 @@ So, John and Jack have ####11 minutes to get to school without being late. (Answ
 >>> Correct Answer: A third of the large jellyfish change color, so there are 6 * 3 = <<6*3=18>>18 large jellyfish.
 A fifth of the jellyfish are large, so there are 18 * 5 = <<18*5=90>>90 jellyfish in the tank.
 #### 90
->>> Baseline Answer:  To find the number of jellyfish in the tank, we need to break down the given information:
+>>> Baseline Answer: To solve this problem, let's break it down:
 
-1. A fifth of the jellyfish are large.
-2. A third of the large jellyfish change color from green to blue under UV light.
-3. The other jellyfish are small and always stay blue.
-4. When a UV light turned on, 6 jellyfish changed color.
+1. Let's denote the total number of jellyfish as T.
+2. A fifth of the jellyfish are large, so there are 0.2 * T large jellyfish.
+3. A third of the large jellyfish change color under UV light, so there are (0.2 * T) * (1/3) = (2/15) * T large jellyfish that change color.
+4. The other jellyfish are small and always stay blue.
+5. When a UV light turned on, 6 jellyfish changed color. Since we know that (2/15) * T large jellyfish change color under UV light, this means that 6 - (2/15) * T is the number of small jellyfish.
+6. To find the total number of jellyfish, we can set up an equation: (2/15) * T + (6 - (2/15) * T) = T (since the total number of jellyfish that change color is 6)
+7. Solving for T, we get T = 90.
 
-Let's denote the total number of jellyfish as J.
-
-1. Since a fifth of the jellyfish are large, we can say that 4/5 * J are small jellyfish.
-2. A third of the large jellyfish change color, so (1/5 * J) * (1/3) = J/15 of the large jellyfish change color.
-3. The remaining large jellyfish stay green, so (1/5 * J) - J/15 = 4/15 * J are large jellyfish that stay green.
-4. We know that when a UV light turned on, 6 jellyfish changed color. Since all small jellyfish are blue, the 6 jellyfish that changed color must be large jellyfish that were originally green.
-5. Now we can set up an equation to represent the information: J/15 + 6 = J/5.
-6. Solving the equation, we find that J = 30.
-
-So, there are ####30 jellyfish in the tank.
+Therefore, there are ####90 jellyfish in the tank.
 >>> Answer in relevant experiment:  First, let's find out how many large jellyfish have the unique characteristic of changing color. A third of the large jellyfish change color, so if we denote the total number of large jellyfish as L, then the number of large jellyfish that change color is 1/3 * L.
 
 Since a fifth of the total jellyfish are large, we can denote the total number of jellyfish as 5L (because there are 5 large jellyfish for every 1 non-large jellyfish).
@@ -355,7 +349,7 @@ Total jellyfish = 90
 
 So, there are ####90 jellyfish in the tank.
 >>>> Extracted Correct Answer: 90
->>>> Extracted Baseline Response: 30
+>>>> Extracted Baseline Response: 90
 >>>> Extracted Experiment Response: 90
 <SEPARATOR>
 >> Reasoning Steps: 3, ID: 877, Sample 1 out of 15
@@ -499,15 +493,19 @@ To get the final numerical answer, we need to round up since the bamboo will gro
 1 whole egg is needed to make 2 halves so 48 halves is 48/2 = <<48/2=24>>24 whole eggs
 1 dozen is equal to 12 and she needs 24 eggs so she needs 24/12 = <<24/12=2>>2 dozen eggs
 #### 2
->>> Baseline Answer:  First, let's find out how many deviled egg halves Lori needs for all her guests. Since each guest eats 3 deviled egg halves, and there are 16 guests, the total number of deviled egg halves needed is 16 * 3 = 48 deviled egg halves.
+>>> Baseline Answer: First, let's find out how many deviled egg halves Lori needs for all her guests. Since each guest eats 3 deviled egg halves, and there are 16 guests, the total number of deviled egg halves needed is:
 
-Since Lori needs 1 whole egg to make 2 deviled egg halves, she needs half the number of deviled egg halves for a whole egg. So, the number of eggs she needs is the total number of deviled egg halves divided by 2.
+16 guests * 3 deviled egg halves per guest = 48 deviled egg halves
 
-So, the number of eggs needed is 48 / 2 = 24 eggs.
+Since 1 whole egg makes 2 deviled egg halves, the number of whole eggs needed is:
 
-Since a dozen eggs is 12, the number of dozens of eggs needed is 24 / 12 = ####4.
+48 deviled egg halves / 2 deviled egg halves per whole egg = 24 whole eggs
 
-So, the final answer is 4 dozens of eggs.
+Finally, to convert the number of whole eggs to dozens, we divide by 12:
+
+24 whole eggs / 12 eggs per dozen = ####.2
+
+So, Lori will need approximately 2 dozen and 6 eggs for her party.
 >>> Answer in relevant experiment:  First, let's calculate the total number of deviled egg halves needed for each guest:
 
 1 guest * 3 deviled egg halves/guest = 3 deviled egg halves
@@ -526,7 +524,7 @@ Since a dozen eggs contains 12 whole eggs, we can now find out how many dozens o
 
 So, Lori will need approximately 2 dozen eggs to ensure that everyone at her party has enough deviled eggs to eat. She is excited to host her gathering and create memorable moments with her loved ones.
 >>>> Extracted Correct Answer: 2
->>>> Extracted Baseline Response: 4.
+>>>> Extracted Baseline Response: 2
 >>>> Extracted Experiment Response: 2
 <SEPARATOR>
 >> Reasoning Steps: 3, ID: 582, Sample 5 out of 15
@@ -1018,15 +1016,17 @@ So, Greta has ####720 left to spend.
 Each crayon weighs 1 ounce, so 200 + 200 = <<200+200=400>>400 ounces.
 400 ounces / 16 ounces per pound = <<400/16=25>>25 pounds.
 #### 25
->>> Baseline Answer:  First, let's find out how many boxes Nik needs to make groups of 8 crayons. Since he has 200 crayons and wants to group them into 8, the number of boxes needed is 200 / 8 = 25 boxes.
+>>> Baseline Answer: First, let's find out how many boxes Nik needs to make groups of 8 crayons: 200 crayons divided by 8 equals 25 boxes (with a remainder of 0, since 200 is divisible by 8).
 
-Next, let's calculate the weight of the crayons. Since each crayon weighs 1 ounce and Nik has 200 crayons, the total weight of the crayons is 200 * 1 = 200 ounces.
+Next, let's calculate the weight of the crayons: 25 boxes times 8 ounces per box equals 200 ounces for the crayons.
 
-Now, let's calculate the weight of the empty boxes. Each box weighs 8 ounces, and Nik has 25 boxes, so the total weight of the empty boxes is 25 * 8 = 200 ounces.
+Since there are 16 ounces to a pound, we can convert the weight of the crayons to pounds: 200 ounces divided by 16 ounces per pound equals 12.5 pounds.
 
-Finally, let's find the total weight of the crayons and the boxes. The total weight is the sum of the weight of the crayons and the weight of the empty boxes, which is 200 (crayons) + 200 (empty boxes) = 400 ounces.
+Since each box weighs 8 ounces, the total weight of the boxes is also 200 ounces, which is 12.5 pounds.
 
-Since there are 16 ounces to a pound, we can convert the total weight to pounds by dividing by 16. So, the total weight is 400 / 16 = ####.4375 pounds. However, since we are only asked to provide the final numerical answer, we can round it to the nearest whole number, which is ####4.
+Finally, to find the total weight of the crayons and the boxes, we add their weights: 12.5 pounds (crayons) + 12.5 pounds (boxes) equals 25 pounds.
+
+So, the final numerical answer is ####25.
 >>> Answer in relevant experiment:  First, let's find out how many pounds Nik's crayons weigh. Since each crayon weighs 1 ounce and he has 200 crayons, the total weight of the crayons is 200 ounces.
 
 Next, we convert this weight to pounds. Since there are 16 ounces to a pound, the total weight of the crayons is 200 ounces / 16 ounces/pound = 12.5 pounds.
@@ -1041,8 +1041,8 @@ Finally, to find the total weight of the crayons and the boxes, we add their wei
 
 So, the total weight, in pounds, of the crayons and the boxes is ####25.
 >>>> Extracted Correct Answer: 25
->>>> Extracted Baseline Response: 
->>>> Extracted Experiment Response: 
+>>>> Extracted Baseline Response: 25
+>>>> Extracted Experiment Response: 25
 <SEPARATOR>
 >> Reasoning Steps: 4, ID: 906, Sample 6 out of 12
 >>> Question: Tim has a box with 7 blue shoe boxes and 9 red shoe boxes. If he uses 3 blue shoeboxes and 1/3 red of his shoeboxes to go fishing, how many red and blue shoe boxes are left in Tim's box?
@@ -1245,13 +1245,21 @@ The sweet potato vines are $2.50 each and she wants 2 per basket so that's 2.5*2
 For 1 basket, the petunias will cost $9.00 and the sweet potato vines will cost $5.00 for a total of 9+5 = $<<9+5=14.00>>14.00
 Each basket will cost $14.00 to fill and she needs to fill 5 baskets for a total of 14*5 = $<<14*5=70.00>>70.00
 #### 70
->>> Baseline Answer:  First, let's calculate the number of each type of plant Katherine needs for one basket: 3 petunias + 2 sweet potato vines = 5 plants per basket.
+>>> Baseline Answer: First, let's calculate the total number of each type of plant Katherine needs:
 
-Next, let's calculate the cost of one basket: 5 petunias * $3.00/petunia + 2 sweet potato vines * $2.50/sweet potato vine = $15.00/basket.
+Petunias: 5 baskets * 3 petunias per basket = 15 petunias
+Sweet potato vines: 5 baskets * 2 sweet potato vines per basket = 10 sweet potato vines
 
-Finally, let's calculate the total cost for all 5 baskets: $15.00/basket * 5 baskets = $75.00.
+Next, let's calculate the cost for each type of plant:
 
-So, the final answer is ####75.00.
+Cost of petunias: 15 petunias * $3.00 per petunia = $45.00
+Cost of sweet potato vines: 10 sweet potato vines * $2.50 per vine = $25.00
+
+Finally, let's add the costs together to find the total cost:
+
+Total cost = $45.00 (petunias) + $25.00 (sweet potato vines) = $70.00
+
+So, Katherine will spend $70.00 filling all 5 hanging baskets.
 >>> Answer in relevant experiment:  First, let's calculate the cost of petunias for one basket: 3 petunias * $3.00/petunia = $9.00.
 
 Next, let's calculate the cost of sweet potato vines for one basket: 2 sweet potato vines * $2.50/vine = $5.00.
@@ -1262,7 +1270,7 @@ Finally, let's multiply the cost for one basket by the number of baskets Katheri
 
 So, Katherine will spend ####70 on flowers for her beautiful garden display.
 >>>> Extracted Correct Answer: 70
->>>> Extracted Baseline Response: 75.00.
+>>>> Extracted Baseline Response: 
 >>>> Extracted Experiment Response: 70
 <SEPARATOR>
 >> Reasoning Steps: 5, ID: 1160, Sample 1 out of 7
@@ -1313,22 +1321,21 @@ The other two phones cost 600/2=$<<600/2=300>>300
 So they cost 300*2=$<<300*2=600>>600
 So the total cost is 1200+600=$<<1200+600=1800>>1800
 #### 1800
->>> Baseline Answer:  First, let's calculate the cost of the first two phones, which are at full price:
+>>> Baseline Answer: First, let's calculate the cost of the first two phones, which are at full price:
 
-Cost of first phone = $600
-Cost of second phone = $600
+Cost of first 2 phones = 2 * $600 = $1200
 
-Now, let's calculate the cost of the remaining phones, which are half price:
+The remaining phones are half price, so we need to find out how many phones are left and calculate their cost:
 
-Cost of third phone = $600 / 2 = $300
-Cost of fourth phone (John's phone) = $300 / 2 = $150
-Cost of fifth phone (wife's phone) = $150 / 2 = $75
+Number of remaining phones = Total number of phones - Number of first two phones = 4 - 2 = 2
 
-Now, let's add up the costs:
+Cost of remaining phones = 2 * ($600 / 2) = 2 * $300 = $600
 
-Total cost = $600 + $600 + $300 + $150 + $75 = $1725
+Now, we can add the cost of the first two phones and the cost of the remaining phones to find the total cost:
 
-However, since we are only asked to provide the final numerical answer with the prefix, the answer is ####1725.
+Total cost = $1200 + $600 = $1800
+
+So, the final answer is ####1800.
 >>> Answer in relevant experiment:  First, let's calculate the price of the third phone, which is half the price of the first phone. So, the price of the third phone is $600 / 2 = $300.
 
 Next, let's calculate the price of the fourth phone, which is half the price of the second phone. Since the second phone has the same price as the first phone (as given in the problem), the price of the fourth phone is also $300.
@@ -1337,7 +1344,7 @@ Now, we have the prices of all four phones: $600, $600, $300, and $300. The tota
 
 So, the final numerical answer is ####1800.
 >>>> Extracted Correct Answer: 1800
->>>> Extracted Baseline Response: 1725.
+>>>> Extracted Baseline Response: 1800.
 >>>> Extracted Experiment Response: 1800.
 <SEPARATOR>
 >> Reasoning Steps: 5, ID: 784, Sample 3 out of 7
@@ -1613,30 +1620,21 @@ He also purchases peppers at a total price of 20 * 15 = $<<20*15=300>>300.
 The oranges cost him a total of 10 * 40 = $<<10*40=400>>400.
 He used a total of 400 + 300 + 180 = $<<400+300+180=880>>880.
 #### 880
->>> Baseline Answer:  First, let's find the cost of a watermelon and an orange in terms of the pepper cost. Since a watermelon costs three times as much as a pepper, and an orange costs 5 less than a watermelon, we can set up the following equations:
+>>> Baseline Answer: First, let's find the cost of a pepper: $15
 
-1. Let the cost of a pepper be P. Then the cost of a watermelon is 3P.
-2. The cost of an orange is 3P - 5.
+Next, let's find the cost of a watermelon. Since it costs three times what each pepper costs, the cost of a watermelon is $15 * 3 = $45.
 
-Now, let's calculate the total cost of the items Dillon is supposed to buy:
+Now, let's find the cost of an orange. Since it costs 5 less than what a watermelon costs, the cost of an orange is $45 - 5 = $40.
 
-1. The cost of the 4 watermelons is 4 * 3P.
-2. The cost of the 20 peppers is 20 * 15 = 300$.
-3. The cost of the 10 oranges is 10 * (3P - 5) = 30P - 50.
+Now, we can calculate the total cost of the items Dillon is buying:
 
-Finally, let's add up the costs to find the total amount of money Dillon will spend:
+Watermelons: 4 * $45 = $180
+Peppers: 20 * $15 = $300
+Oranges: 10 * $40 = $400
 
-Total cost = 4 * 3P + 300$ + 30P - 50$
+Finally, let's add up the costs to find the total amount of money Dillon will spend: $180 (watermelons) + $300 (peppers) + $400 (oranges) = $880.
 
-Since we are asked to provide the final numerical answer, we can simplify the equation:
-
-Total cost = 12P + 250$
-
-Given that each pepper costs 15$, we can substitute P with 15 in the equation:
-
-Total cost = 12 * 15 + 250$ = 180 + 250$ = 430$
-
-So, the total amount of money Dillon will spend is ####430.
+So, the final numerical answer is ####880.
 >>> Answer in relevant experiment:  First, let's find the cost of a watermelon and an orange in terms of the cost of a pepper. We know that a watermelon costs three times what each pepper costs, so the cost of a watermelon is 3 * $15 = $45.
 
 We also know that an orange costs 5 less than what a watermelon costs, so the cost of an orange is $45 - 5 = $40.
@@ -1696,24 +1694,26 @@ Mei finds 8 / 2 = <<8/2=4>>4 eggs.
 The children find a total of 5 + 10 + 8 + 4 = <<5+10+8+4=27>>27 eggs.
 The total number of hidden eggs still in the yard is 36 - 27 = <<36-27=9>>9 eggs.
 #### 9
->>> Baseline Answer:  Let's break this down:
+>>> Baseline Answer: To find out how many eggs are still hidden, let's first determine the number of eggs found by each person:
 
 1. Lamar finds 5 eggs.
 2. Stacy finds twice as many as Lamar, so she finds 5 * 2 = 10 eggs.
 3. Charlie finds 2 less than Stacy, so he finds 10 - 2 = 8 eggs.
 4. Mei finds half as many as Charlie, so she finds 8 / 2 = 4 eggs.
 
-Now, let's add up the eggs found by everyone:
+Now, let's add up the number of eggs found:
 
-5 (Lamar) + 10 (Stacy) + 8 (Charlie) + 4 (Mei) = 27 eggs.
+Total found = Lamar's eggs + Stacy's eggs + Charlie's eggs + Mei's eggs
+Total found = 5 + 10 + 8 + 4 = 27 eggs
 
 Since Cole hid 3 dozen eggs, and 1 dozen equals 12 eggs, Cole hid 3 * 12 = 36 eggs.
 
 Now, let's find out how many eggs are still hidden:
 
-36 (total eggs) - 27 (found eggs) = ####6 (unhidden eggs)
+Eggs hidden = Total eggs - Total found
+Eggs hidden = 36 - 27 = 9 eggs
 
-So, there are 6 eggs still hidden in the yard.
+So, the final answer is ####9 eggs are still hidden in the yard.
 >>> Answer in relevant experiment:  To find the number of hidden eggs, let's first determine the number of eggs found by each child:
 
 1. Lamar found 5 eggs.
@@ -1735,7 +1735,7 @@ Hidden eggs = 36 - 27
 
 So, there are ####9 hidden eggs still waiting to be discovered in the yard.
 >>>> Extracted Correct Answer: 9
->>>> Extracted Baseline Response: 6
+>>>> Extracted Baseline Response: 9
 >>>> Extracted Experiment Response: 9
 <SEPARATOR>
 >> Reasoning Steps: 8, ID: 777, Sample 1 out of 1

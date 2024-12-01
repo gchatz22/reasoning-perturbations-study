@@ -1499,15 +1499,17 @@ If the new box has 120 pods and the price for the box is $12, then each pod cost
 If 1 pod costs $0.10 and is used in 1 cycle, then each cycle costs = $<<1*0.10=0.10>>0.10
 If 1 cycle costs $0.10, then for $1 I could run $1/$0.1 = 10 cycles
 #### 10
->>> Baseline Answer: Here's how to solve the problem:
+>>> Baseline Answer: Here's how to solve this:
 
-* **Calculate the number of pods in the larger box:** 100 pods * 0.20 (20%) = 20 extra pods.  So the larger box has 100 pods + 20 pods = 120 pods.
-* **Calculate the number of cycles per dollar:** $1 / $0.12 per pod = 8.33 pods.
-* **Calculate the number of cycles:** 8.33 pods * 1 cycle per pod = 8.33 cycles.
+* **Calculate the extra pods:** 20% of 100 pods is (20/100) * 100 = 20 pods.
+* **Total pods in the new box:** The new box has 100 + 20 = 120 pods.
+* **Cycles per dollar:**  You can run 120 cycles with the new box.
+* **Cycles per dollar:**  You can run 120 cycles / $12 = 10 cycles per dollar.
 
 
-####08 
 
+
+####10
 >>> Answer in relevant experiment: Here's how to solve this:
 
 * **Calculate the number of pods in the larger box:** 100 pods * 0.20 (20%) = 20 extra pods.  So the larger box has 100 + 20 = 120 pods.
@@ -1519,7 +1521,7 @@ If 1 cycle costs $0.10, then for $1 I could run $1/$0.1 = 10 cycles
 ####10 
 
 >>>> Extracted Correct Answer: 10
->>>> Extracted Baseline Response: 08
+>>>> Extracted Baseline Response: 10
 >>>> Extracted Experiment Response: 10
 <SEPARATOR>
 >> Reasoning Steps: 6, ID: 690, Sample 2 out of 4
@@ -1672,14 +1674,13 @@ After the amount that he gave the wife and daughter, the total amount remaining 
 
 6. **Amount after donation:** Zaid has $2500 - $1250 = $1250 left.
 
-7. **Total expenses:** His total expenses are $1250 + $200 + $700 = $2150.
+7. **Total expenses:** His total expenses are $200 + $700 = $900.
 
-8. **Final amount:** Zaid has $1250 - $2150 = -$900 left. 
+8. **Final amount:** Zaid has $1250 - $900 = $350 left.
 
 
 
-####-900 
-
+####350
 >>> Answer in relevant experiment: Here's how to solve the problem step-by-step:
 
 1. **Calculate rent expense:** (1/4) * $6000 = $1500
@@ -1692,7 +1693,6 @@ After the amount that he gave the wife and daughter, the total amount remaining 
 
 
 ####350 
-
 >>>> Extracted Correct Answer: 350
 >>>> Extracted Baseline Response: -900
 >>>> Extracted Experiment Response: 350

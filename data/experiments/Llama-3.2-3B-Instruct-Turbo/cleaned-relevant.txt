@@ -507,23 +507,35 @@ The basketball coach spent $85 more than the baseball coach.
 The total number of pears that George has is 200+90 =<<200+90=290>>290
 Together, George has 290 pears + 200 bananas = <<290+200=490>>490 fruits
 #### 490
->>> Baseline Answer: #### 283
+>>> Baseline Answer: ## Calculating the number of pears
+
+Since George has 45% more pears than bananas, we need to find 45% of the number of bananas and add it to the number of bananas.
+
+45% of 200 bananas = 0.45 * 200 = 90
+
+Number of pears = Number of bananas + 45% of bananas
+= 200 + 90
+= 290
+
+## Calculating the total number of fruits
+
+Total number of fruits = Number of bananas + Number of pears
+= 200 + 290
+= 490
+
+#### 490
 >>> Answer in relevant experiment: To find the number of pears George has, we need to calculate 45% of the number of bananas he has, and then add that to the number of bananas.
 
 45% of 200 bananas = 0.45 * 200 = 90
 
 Since George has 45% more pears than bananas, we add 90 to the number of bananas:
 
-200 bananas + 90 = 290 pears
+200 bananas + 90 pears = 290 fruits
 
-Now, to find the total number of fruits, we add the number of bananas and pears:
-
-200 bananas + 290 pears = 490 fruits
-
-#### 490
+#### 290
 >>>> Extracted Correct Answer: 490
->>>> Extracted Baseline Response: 283
->>>> Extracted Experiment Response: 490
+>>>> Extracted Baseline Response: 490
+>>>> Extracted Experiment Response: 290
 <SEPARATOR>
 >> Reasoning Steps: 3, ID: 864, Sample 6 out of 15
 >>> Question: George, a grade six teacher, ordered 600 burritos for the sixth-grade class picnic. If there were 50 students at the picnic, and each student was given ten burritos, with Mr. George eating 20 of them, calculate the total number of leftover burritos from the picnic?
@@ -677,59 +689,39 @@ Since Martha has fewer notebooks than Joseph, we can say that Martha has 14 fewe
 So 2300 people, need 5 * 2300 = <<2300*5=11500>>11500 juices for this purpose.
 To cover 100% of the daily energy needs of 2300 people, Hortex would need to produce 11500 - 4200 = 7300 bottles of juices.
 #### 7300
->>> Baseline Answer: To find out how many bottles Hortex needs to produce to satisfy 100% of the daily energy needs of 2300 people, we first need to calculate the total energy demand of these people.
+>>> Baseline Answer: To find out how many bottles Hortex needs to produce to satisfy 100% of the daily energy needs of 2300 people, we first need to calculate the total daily energy demand of 2300 people.
 
-Since each bottle covers 20% of 1 person's daily energy demand, we can calculate the energy demand of 1 person as follows:
-20% of 1 person's daily energy demand = 0.2 * (1 person's daily energy demand)
-Since we don't know the exact value of 1 person's daily energy demand, let's represent it as 'x'. Then the energy demand of 1 person is 0.2x.
+Since each bottle covers 20% of 1 person's daily energy demand, 100% of 1 person's daily energy demand would be 5 bottles (20% of 5 = 1).
 
-Now, the total energy demand of 2300 people is:
-2300 * 0.2x = 460x
+So, 100% of 2300 people's daily energy demand would be 2300 * 5 = 11500 bottles.
 
-Since each bottle covers 20% of 1 person's daily energy demand, the number of bottles required to cover 100% of the daily energy needs of 2300 people is:
-460x / 0.2x = 2300
+Currently, Hortex can produce 4200 bottles per day. To find out how many more bottles they need to produce, we subtract the current production from the total demand:
 
-Now, we know that Hortex can produce 4200 bottles per day. To find out how many more bottles it needs to produce, we subtract the current production from the required production:
-2300 - 4200 = -1900
+11500 - 4200 = 7300
 
-However, this is not possible, as Hortex cannot produce a negative number of bottles. This means that the initial assumption of 0.2x being the daily energy demand of 1 person is incorrect.
+Therefore, Hortex would need to produce #### bottles of juices per day to satisfy 100% of the daily energy needs of 2300 people.
+>>> Answer in relevant experiment: To find out how many bottles Hortex needs to produce to satisfy 100% of the daily energy needs of 2300 people, we first need to calculate the total energy demand of 2300 people.
 
-Let's re-evaluate the problem. If each bottle covers 20% of 1 person's daily energy demand, and Hortex can produce 4200 bottles per day, then the daily energy demand of 1 person is:
-4200 / 0.2 = 21000
+Since each juice covers 20% of 1 person's daily energy demand, 100% of a person's daily energy demand would be 5 juices (20% / 20% = 1, and 1 * 5 = 5).
 
-Now, the total energy demand of 2300 people is:
-2300 * 21000 = 48300000
+Now, we need to calculate the total energy demand of 2300 people, which is 2300 * 5 = 11500.
 
-The number of bottles required to cover 100% of the daily energy needs of 2300 people is:
-48300000 / 20 = 2415000
+Since each juice covers 20% of the daily energy demand, we need 100% of the energy demand, which is 11500 / 0.2 = 57500.
 
-Since Hortex can produce 4200 bottles per day, the number of additional bottles it needs to produce is:
-2415000 - 4200 = 2410780
+Since each juice covers 20% of the daily energy demand, we need 100% of the energy demand, which is 57500 / 0.2 = 287500.
 
-####
->>> Answer in relevant experiment: To determine how many more bottles Hortex needs to produce, we first need to calculate the total daily energy demand of 2300 people. 
+Hortex can produce 4200 bottles per day. To find out how many days it would take to produce 287500 bottles, we divide the total number of bottles needed by the number of bottles produced per day: 287500 / 4200 = 68.5.
 
-Since each bottle covers 20% of 1 person's daily energy demand, we can calculate the energy demand of 1 person as follows:
-20% of 1 person's daily energy demand = 0.2 * 1 = 0.2
+Since we can't produce a fraction of a bottle, we need to round up to the nearest whole number. However, in this case, we are asked for the number of bottles Hortex needs to produce to meet the demand, not the number of days.
 
-Now, we can calculate the total daily energy demand of 2300 people:
-0.2 * 2300 = 460 people's worth of energy demand per bottle
+To find the number of bottles Hortex needs to produce, we multiply the number of people by the number of juices each person needs: 2300 * 5 = 11500.
 
-Since Hortex can produce 4200 bottles per day, we can calculate the total daily energy demand it can cover:
-4200 bottles * 0.2 = 840 people's worth of energy demand per day
+Now, we subtract the number of bottles Hortex can produce per day from the total number of bottles needed: 11500 - 4200 = 7300.
 
-To cover 100% of the daily energy needs of 2300 people, Hortex needs to cover 2300 people's worth of energy demand per day. Since it can cover 840 people's worth of energy demand per day, it needs to produce more bottles.
-
-First, let's calculate the number of bottles needed to cover 2300 people's worth of energy demand per day:
-2300 people's worth of energy demand per day / 0.2 = 11500 people's worth of energy demand per day
-
-Now, we can calculate the additional number of bottles Hortex needs to produce:
-11500 - 840 = 10460
-
-####
+So, Hortex needs to produce #### bottles of juices per day to satisfy 100% of the daily energy needs of 2300 people.
 >>>> Extracted Correct Answer: 7300
->>>> Extracted Baseline Response: 2410780
->>>> Extracted Experiment Response: 10460
+>>>> Extracted Baseline Response: 7300
+>>>> Extracted Experiment Response: 7300
 <SEPARATOR>
 >> Reasoning Steps: 3, ID: 68, Sample 12 out of 15
 >>> Question: There are twice as many boys as girls at Dr. Wertz's school. If there are 60 girls and 5 students to every teacher, how many teachers are there?
@@ -1048,29 +1040,25 @@ If 3/4 of the first plane’s flights are to Greece, then flights to France or G
 Therefore, 88 daily flights / 4 = <<88/4=22>>22 flights to France or Germany.
 Splitting these flights equally means the first plane makes 22 flights / 2 = <<22/2=11>>11 flights to France in one day.
 #### 11
->>> Baseline Answer: Let's denote the total number of flights made by the first plane in a day as x. 
+>>> Baseline Answer: To find the number of flights to France the first plane takes in one day, we need to first find the total number of flights the first plane makes.
 
-Since the first plane flies to Greece for three-quarters of its flights, it makes 0.75x flights to Greece. The remaining flights are split equally between flights to France and flights to Germany. So, the first plane makes 0.25x flights to France and 0.25x flights to Germany.
+Since the second plane flies 44 trips exclusively to Poland, and this is half the number of trips the first plane makes, we can calculate the total number of flights the first plane makes as follows:
 
-We are given that the second plane flies exclusively to Poland and makes 44 trips in a day, which is half the number of trips the first plane makes. Therefore, the first plane makes 2 * 44 = 88 trips.
+44 (trips to Poland) / 2 = 22 (trips to Poland) is not the number of trips the first plane makes, but rather half of the first plane's trips. So, we can calculate the total number of flights the first plane makes by doubling the number of trips
+to Poland.
 
-Since the first plane makes 0.75x flights to Greece and 0.25x flights to France, we can set up the equation:
+Total flights of the first plane = 2 * 44 = 88
 
-0.75x + 0.25x = 88
+Now, we know that the first plane goes to Greece for three-quarters of its flights. This means the remaining flights are split equally between flights to France and flights to Germany.
 
-Combine like terms:
+Flights to Greece = 3/4 * 88 = 66
+Flights to France and Germany = 88 - 66 = 22
 
-1x = 88
+Since the flights to France and Germany are split equally, we can divide the remaining flights by 2 to find the number of flights to France:
 
-Divide both sides by 1:
+Flights to France = 22 / 2 = 11
 
-x = 88
-
-Now that we know the total number of flights made by the first plane in a day, we can find the number of flights to France:
-
-Number of flights to France = 0.25x
-= 0.25 * 88
-= 22
+Therefore, the first plane takes 11 flights to France in one day.
 
 ####
 >>> Answer in relevant experiment: To find the number of flights to France the first plane takes in one day, we need to first determine the total number of flights the first plane makes in a day. 
@@ -1085,7 +1073,7 @@ Since the question specifically asks for the number of flights to France, the an
 
 #### 11
 >>>> Extracted Correct Answer: 11
->>>> Extracted Baseline Response: 22
+>>>> Extracted Baseline Response: 11
 >>>> Extracted Experiment Response: 11
 <SEPARATOR>
 >> Reasoning Steps: 4, ID: 483, Sample 6 out of 12
@@ -1551,33 +1539,38 @@ The sum of our ages is X + (X+3) + (X-2) + [(X+3)*3 - 1] = 87 years old.
 Multiplying through the parentheses and combining like terms, you get X*6 + 9 = 87 years old.
 Subtracting nine from both sides and dividing both sides by 6, you get X = 13 years old.
 #### 13
->>> Baseline Answer: Let's denote my age as A, my brother's age as B, and my sister's age as C.
+>>> Baseline Answer: Let's denote my age as A, my brother's age as B, and my sister's age as S.
 
 From the given information:
-1. I am 3 years younger than my brother, so A = B - 3.
-2. I am 2 years older than my sister, so A = C + 2.
-3. My mom's age is one less than three times my brother's age, so Mom's age = 3B - 1.
 
-We also know that the sum of our ages is 87: A + B + C + Mom's age = 87.
+1. I am 3 years younger than my brother: A = B - 3
+2. I am 2 years older than my sister: A = S + 2
+3. My mom's age is one less than three times my brother's age: Mom's age = 3B - 1
 
-Substituting the expressions for A and Mom's age from the first two equations:
-(B - 3) + B + (B - 3 - 2) + (3B - 1) = 87
+The sum of our ages is 87: A + B + S + Mom's age = 87
+
+Substituting the expressions for A and Mom's age from the first two equations into the sum equation:
+
+(B - 3) + B + (B - 3 - 2) + 3B - 1 = 87
 
 Combine like terms:
-6B - 7 = 87
 
-Add 7 to both sides:
-6B = 94
+6B - 9 = 87
+
+Add 9 to both sides:
+
+6B = 96
 
 Divide by 6:
-B = 15.67 (round down to 15, since age can't be a fraction)
 
-Now that we know B, we can find A:
-A = B - 3
-A = 15 - 3
-A = 12
+B = 16
 
-So, I am 12 years old. ####
+Now that we know B, we can find A and S:
+
+A = B - 3 = 16 - 3 = 13
+S = A - 2 = 13 - 2 = 11
+
+So, I am 13 years old. ####
 >>> Answer in relevant experiment: Let's denote your age as 'x'. 
 
 Since you are 3 years younger than your brother, your brother's age is x + 3.
@@ -1637,7 +1630,7 @@ Mom's age: 3(16) - 1 = 47
 
 So, the correct age is 13.
 >>>> Extracted Correct Answer: 13
->>>> Extracted Baseline Response: 12
+>>>> Extracted Baseline Response: 13
 >>>> Extracted Experiment Response: 13
 <SEPARATOR>
 >> Reasoning Steps: 5, ID: 9, Sample 7 out of 7
@@ -1877,39 +1870,64 @@ Since 1.76 is less than 2 inches, he will recycle this stick in 2 days.
 #### 2
 >>> Baseline Answer: To find out how many days the teacher has before he has to recycle the chalk, we need to calculate the remaining amount of chalk.
 
-Initially, the teacher had a 5-inch piece of chalk. He used 45% of it on Monday, which is 0.45 * 5 = 2.25 inches. So, the remaining chalk is 5 - 2.25 = 2.75 inches.
+The teacher started with a 5-inch piece of chalk and used 45% of it on Monday.
 
-Since the teacher recycles the chalk when it is smaller than 2 inches, we need to find out how many days it will take for the remaining chalk to be less than 2 inches at a rate of 20% per day.
+First, we need to find 45% of 5 inches:
+45% of 5 inches = 0.45 * 5 = 2.25 inches
 
-Let's divide the remaining chalk (2.75 inches) by the daily usage (20% or 0.2 inches):
+Since the teacher cannot write with a very small piece of chalk, we need to find out how much chalk is left:
+5 inches - 2.25 inches = 2.75 inches
 
-2.75 / 0.2 = 13.75
+The teacher will now use 20% of the chalk each day. We need to find out how many days it will take for the chalk to be smaller than 2 inches.
 
-Since the teacher can't use a fraction of a day, we round up to the nearest whole number. However, in this case, we are looking for the number of days before the chalk is recycled, so we will round down to 13 days.
+Let's assume the number of days is x. Then, 20% of the chalk will be used each day:
+2.75 inches - (20% of 2.75 inches) * x = 2 inches
 
-The teacher will have 13 days before he has to recycle this piece of chalk. 
+First, we need to find 20% of 2.75 inches:
+20% of 2.75 inches = 0.20 * 2.75 = 0.55 inches
+
+Now, we can rewrite the equation:
+2.75 inches - 0.55 inches * x = 2 inches
+
+Subtract 2.75 inches from both sides:
+-0.55 inches * x = -0.75 inches
+
+Divide both sides by -0.55 inches:
+x = 1.36 days
+
+Since the teacher cannot recycle the chalk a fraction of a day, we round up to the nearest whole number. However, in this case, the answer is not a whole number, but we can round up to 2 days.
 
 ####
->>> Answer in relevant experiment: To find out how many days the teacher has before he has to recycle the chalk, we need to calculate the remaining percentage of the chalk after Monday.
+>>> Answer in relevant experiment: To find out how many days the teacher has before he has to recycle the chalk, we need to calculate the remaining percentage of the chalk.
 
-The teacher started with a 5-inch piece of chalk and used 45% of it by the end of Monday. To find the remaining percentage, we subtract 45% from 100%:
+The teacher started with a 5-inch piece of chalk and used 45% of it on Monday. To find the remaining percentage, we subtract 45% from 100%:
 
 100% - 45% = 55%
 
-Since the teacher uses 20% of the chalk each day, we need to find out how many days it will take for the remaining 55% to be used up at a rate of 20% per day.
+Since the teacher uses 20% of the chalk each day, we need to find out how many days it will take for the remaining 55% to be used up.
 
 Let's divide the remaining percentage by the daily usage percentage:
 
 55% / 20% = 2.75
 
-Since the teacher can't use a fraction of a day, we round up to the nearest whole number. However, in this case, we are looking for the number of days before the chalk needs to be recycled, so we will round down to 2 days.
+Since the teacher can't use a fraction of a day, we round up to the nearest whole number. However, in this case, we need to consider that the teacher will use the remaining chalk in a whole number of days, but the remaining chalk will be less
+than 20% after the 2.75 days.
 
-The teacher had previously calculated that the piece of chalk would last him around 25 days, considering his usual writing pace and the amount of chalk used. However, this calculation was based on the teacher's usual writing pace, not the increased pace on Monday.
+We can calculate the remaining amount of chalk after 2 days of using 20% of the chalk each day:
 
-Considering the increased pace on Monday, the teacher will use up the remaining chalk in 2 days.
+Day 1: 5 - (5 * 0.2) = 4 inches
+Day 2: 4 - (4 * 0.2) = 3.2 inches
+
+The remaining chalk after 2 days is 3.2 inches. We need to find out how many days it will take to use up the remaining 0.8 inches (3.2 - 2.4).
+
+Since the teacher uses 20% of the chalk each day, we can divide the remaining amount by the daily usage percentage:
+
+0.8 / 0.2 = 4
+
+So, the teacher will have 4 days before he has to recycle the chalk.
 >>>> Extracted Correct Answer: 2
->>>> Extracted Baseline Response: 13
->>>> Extracted Experiment Response: 2
+>>>> Extracted Baseline Response: 2
+>>>> Extracted Experiment Response: 4
 <SEPARATOR>
 >> Reasoning Steps: 7, ID: 796, Sample 2 out of 2
 >>> Question: A company's HR hires 20 new employees every month to add to its total workforce. If the company's initial employee number is 200, and each employee is paid a $4000 salary per month, calculate the total amount of money the company pays to its employees after three months?

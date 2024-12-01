@@ -310,12 +310,11 @@ So the total number of windows is 10*2=<<10*2=20>>20 windows
 >>> Baseline Answer: Here's how to solve the problem:
 
 * **Windows per bedroom:** 2 houses * 3 bedrooms/house * 2 windows/bedroom = 12 windows
-* **Additional windows per house:** 4 windows
-* **Total windows per house:** 12 windows + 4 windows = 16 windows
-* **Total windows in both houses:** 16 windows/house * 2 houses = 32 windows
+* **Additional windows per house:** 4 windows/house * 2 houses = 8 windows
+* **Total windows:** 12 windows + 8 windows = 20 windows
 
 
-####32
+####20
 >>> Answer in relevant experiment: Here's how to solve the problem:
 
 * **Windows per bedroom:** 2 windows/bedroom * 3 bedrooms/house = 6 windows/house
@@ -325,7 +324,7 @@ So the total number of windows is 10*2=<<10*2=20>>20 windows
 ####20 
 
 >>>> Extracted Correct Answer: 20
->>>> Extracted Baseline Response: 32
+>>>> Extracted Baseline Response: 20
 >>>> Extracted Experiment Response: 20
 <SEPARATOR>
 >> Reasoning Steps: 3, ID: 718, Sample 2 out of 15
