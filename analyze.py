@@ -44,6 +44,8 @@ def main(
     table.add_column("Experiment Correctness", justify="center")
 
     for datapoint in datapoints:
+        if datapoint == "\n" or datapoint == "":
+            continue
         idd = re.findall(r"ID:\s*(\d+)", datapoint)[0]
         extracted_correct_answer = re.findall(
             r">>>> Extracted Correct Answer:\s*(.*?)\n", datapoint

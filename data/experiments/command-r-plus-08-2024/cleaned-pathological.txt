@@ -428,16 +428,17 @@ The number of petals on daisies is 4 x 10 = <<4*10=40>>40.
 Daisy petals outnumber orchid petals by 40 - 25 = <<40-25=15>>15.
 #### 15
 >>> Baseline Answer: #### 20
->>> Answer in pathological experiment: In the realm of nature's wonders, let us contemplate the beauty of petals, for they are the delicate garments adorning the flowers' souls. Joelle's balcony, a microcosm of Earth's garden, presents us with a riddle.
+>>> Answer in pathological experiment: In the realm of nature's wonders, let us contemplate the beauty of petals, for they are the delicate garments adorning the flowers' souls. Joelle's balcony, a microcosm of Earth's garden, presents us with a
+riddle.
 
-The orchids, with their graceful presence, display five petals, a number that speaks of simplicity. Meanwhile, the African daisies, vibrant and cheerful, boast double that amount, as if rejoicing in their abundance.
+The orchids, with their graceful presence, display 5 petals each, a modest number, yet a symbol of perfection in its simplicity. Meanwhile, the African daisies, vibrant and cheerful, boast double that amount, as if rejoicing in their abundance.
 
-To find the difference, we must embark on a journey of subtraction, a mathematical dance that reveals the hidden truth. Five, the number of orchids' petals, retreats before the might of ten, the daisies' count.
+When we compare these two floral beings, we find that the daisies, with their exuberant petals, outshine the orchids by a margin that is...
 
-#### 15
+#### 20
 >>>> Extracted Correct Answer: 15
 >>>> Extracted Baseline Response: 20
->>>> Extracted Experiment Response: 15
+>>>> Extracted Experiment Response: 20
 <SEPARATOR>
 >> Reasoning Steps: 3, ID: 632, Sample 9 out of 15
 >>> Question: Max bought stamps at the post office. Some of the stamps had a snowflake design, some had a truck design, and some had a rose design. Max bought 16 snowflake stamps. He bought 3 more truck stamps than snowflake stamps, and 9 fewer rose stamps than truck stamps. How many stamps did Max buy in all?
@@ -819,16 +820,16 @@ That means each CD cost 15-6=$<<15-6=9>>9
 So he paid 10*9=$<<10*9=90>>90
 That means he was out 90-40=$<<90-40=50>>50
 #### 50
->>> Baseline Answer: James spent $150 on the 10 CDs, but with the 40% discount, he paid $90. He then sold 5 of the CDs for $40, making a profit of $10. Therefore, James was out by $80.
+>>> Baseline Answer: James spent $150 on the 10 CDs, but with a 40% discount, he paid $90. He then sold 5 of them for $40, which means he got back $40. Therefore, James was out by $50.
 
-####80
+####50
 >>> Answer in pathological experiment: James initially spent $15 x 10 = $150 on the CDs. With a 40% discount, he paid $150 * 0.6 = $90. After selling the 5 unwanted CDs for $40, he recouped some of his money. 
 
 To calculate his final loss, we subtract the selling price from the amount he paid: $90 - $40 = $50.
 
 ####50
 >>>> Extracted Correct Answer: 50
->>>> Extracted Baseline Response: 80
+>>>> Extracted Baseline Response: 50
 >>>> Extracted Experiment Response: 50
 <SEPARATOR>
 >> Reasoning Steps: 4, ID: 1306, Sample 11 out of 12
@@ -898,17 +899,15 @@ Including the rows of 8 and 6 stars, we have 24 stars + 12 stars = <<24+12=36>>3
 Now we need to know how many stars are missing, 76 stars - 36 stars = <<76-36=40>>40 stars.
 Now we need to distribute the missing stars in rows of 5 stars, 40 stars/5 rows = <<40/5=8>>8 rows of 5 stars.
 #### 8
->>> Baseline Answer: There are 24 stars in the 3 rows of 8 stars, 12 stars in the 2 rows of 6 stars, and 76 stars in total. This means there are 76 - 24 - 12 = 40 stars in the 5-star rows.
+>>> Baseline Answer: There are 24 stars in the three rows of 8 stars, 12 stars in the two rows of 6 stars, and 76 stars in total. This means there are 76 - 24 - 12 = 40 stars in the 5-star rows. Therefore, there are 8 rows of 5 stars.
 
-####40
->>> Answer in pathological experiment: So, we've got a flag with a bunch of stars arranged in different rows. There are 3 rows with 8 stars each, and another 2 rows with 6 stars. That's 3 x 8 = 24 stars, and 2 x 6 = 12 stars, so that's 36 stars accounted for. 
+####8
+>>> Answer in pathological experiment: There will be a total of 24 stars in the 8-star rows and 12 stars in the 6-star rows. This will leave 32 stars for the 5-star rows.
 
-Now, the 76-star flag has a total of 76 stars, and we've used 36, so that leaves 76 - 36 = 40 stars. These remaining stars are in rows of 5, so there are 40/5 = 8 rows of 5 stars.
-
-#### 8
+####36
 >>>> Extracted Correct Answer: 8
->>>> Extracted Baseline Response: 40
->>>> Extracted Experiment Response: 8
+>>>> Extracted Baseline Response: 8
+>>>> Extracted Experiment Response: 36
 <SEPARATOR>
 >> Reasoning Steps: 5, ID: 1226, Sample 2 out of 7
 >>> Question: A basic manicure starts at $35 while a pedicure starts at $40. A certain salon offers 20% off if you get both. Suppose Karen chooses to do both and would also like to add nail art on each of her fingers, which costs $3 per nail. How much would she pay in all?

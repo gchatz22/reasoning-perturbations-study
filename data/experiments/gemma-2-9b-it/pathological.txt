@@ -188,17 +188,15 @@ The bottle costs $24.00 and she will 240 washes so each wash is 24/240 = $<<24/2
 
 ####20 
 
->>> Answer in pathological experiment: Here's how to solve this:
+>>> Answer in pathological experiment: Ah, the eternal question of value!  We are presented with a vessel of cleansing, a jumbo bottle of shampoo, promising 120 washes for a price of 24 silver coins.  But the wisdom of the ancients tells us that
+true value lies not in the whole, but in the individual parts.
 
-* **Find the total number of washes:** Since Jackie uses 1 pump per wash and the bottle lasts for 120 washes, she'll get 120 washes out of the bottle.
-* **Calculate the cost per pump:** Divide the total cost of the shampoo ($24.00) by the number of pumps needed for all the washes (2 pumps/wash * 120 washes = 240 pumps). This gives you $0.10 per pump.
-* **Convert to cents:** Multiply the cost per pump in dollars by 100 to get the cost in cents. $0.10 * 100 = 10 cents.
+If two pumps yield 120 washes, then one pump, a single act of lathering, must be responsible for 60 washes.  Therefore, the cost of each pump, this tiny unit of cleansing, is 24 silver coins divided by 60 washes, or 0.4 silver coins per wash.
 
-####10 
-
+Now, we must convert this to the smallest unit of our monetary system, the cent.  Knowing that 1 silver coin equals 100 cents, we find that each pump costs ####040 cents.
 >>>> Extracted Correct Answer: 10
 >>>> Extracted Baseline Response: 20
->>>> Extracted Experiment Response: 10
+>>>> Extracted Experiment Response: 040
 <SEPARATOR>
 >> Reasoning Steps: 2, ID: 874, Sample 9 out of 13
 >>> Question: Ella earned $33 for 3 hours of dog walking. If she continues to walk dogs at the same rate, how much would she earn after 12 hours?
@@ -973,32 +971,26 @@ The nonfood stuff comes out to 3+3+4=$<<3+3+4=10>>10
 Tax on the nonfood stuff comes out to 10*.1=$<<10*.1=1>>1
 So the total cost is 5+10+1=$<<5+10+1=16>>16
 #### 16
->>> Baseline Answer: Here's how to solve the problem:
+>>> Baseline Answer: Here's how to calculate the cost:
+
+* **Non-food items:** Light bulbs ($3), cups ($3), and roach traps ($4) total $10.
+* **Tax on non-food items:** 10% of $10 is $1.
+* **Total cost of non-food items:** $10 + $1 = $11
+* **Total cost of all items:** $2 (milk) + $3 (eggs) + $11 (non-food items) = $16
+
+
+####16
+>>> Answer in pathological experiment: Here's how to solve the problem:
 
 * **Identify non-food items:** Eggs, light bulbs, cups, and roach traps are non-food items.
-* **Calculate the tax on non-food items:** 
-    * Total cost of non-food items: $3 + $3 + $3 + $4 = $13
-    * Tax amount: $13 * 0.10 = $1.30
-* **Calculate the total cost:**
-    * Total cost of all items: $2 + $13 + $1.30 = $16.30
+* **Calculate the tax:** The tax on non-food items is 10% of (3 + 3 + 3 + 4) = 10% of 13 dollars = 1.30 dollars.
+* **Calculate the total cost:** The total cost is 2 + 3 + 3 + 3 + 4 + 1.30 = 16.30 dollars.
 
 
-####16.30 
-
->>> Answer in pathological experiment: Here's how to break down the cost:
-
-* **Food Items:** Milk and eggs total $2 + $3 = $5
-* **Non-Food Items:** Light bulbs ($3), cups ($3), and roach traps ($4) total $3 + $3 + $4 = $10
-* **Tax on Non-Food:** 10% of $10 is $1.
-* **Total Cost of Non-Food:** $10 + $1 = $11
-* **Grand Total:** $5 (food) + $11 (non-food) = $16
-
-
-####16 
-
+####16.30
 >>>> Extracted Correct Answer: 16
->>>> Extracted Baseline Response: 16.30
->>>> Extracted Experiment Response: 16
+>>>> Extracted Baseline Response: 16
+>>>> Extracted Experiment Response: 16.30
 <SEPARATOR>
 >> Reasoning Steps: 4, ID: 171, Sample 10 out of 12
 >>> Question: Jake is walking through the Museum of Entomology. He sees 80 spiders with 8 legs each, 90 insects with 6 legs each, and 3 rare mutant invertebrates with 10 legs each. How many legs does Jake see total?
@@ -1393,10 +1385,17 @@ Now we can solve for 'w':
 
 This means there's an error in the problem statement. It's impossible for Bob to have twice as many orange fish as white fish after buying more fish if he started with more white fish. 
 
->>> Answer in pathological experiment: Wow! Let's figure this out! Gosh! Bob started with 3 orange fish and 4 white fish. Wow!  After buying more, he had twice as many orange fish as white fish. Gosh! Let's use variables to represent the number of orange and white fish Bob bought:  * Let 'o' be the number of orange fish he bought. * Let 'w' be the number of white fish he bought. Wow!  We know that Bob now has 3 + o orange fish and 4 + w white fish. Gosh!  We also know that 3 + o = 2(4 + w). Wow!  Let's solve for 'w': 3 + o = 8 + 2w o - 2w = 5  Gosh!  We need more information to solve for 'o' and 'w' directly.  Wow!  However, we know that Bob bought a total of 17 fish, so o + w = 17. Gosh!  Now we have two equations: o - 2w = 5 o + w = 17  Wow!  We can solve for 'w' using substitution or elimination. Let's use substitution.  Gosh!  Solve the second equation for 'o': o = 17 - w. Wow!  Substitute this value of 'o' into the first equation: (17 - w) - 2w = 5. Gosh!  Simplify and solve for 'w': 17 - 3w = 5 -3w = -12 w = 4.  Wow! Bob bought ####4 white fish at the store. 
+>>> Answer in pathological experiment: Here's how to solve the problem:
+
+* **Let 'w' represent the number of white fish Bob bought.**
+* **He bought twice as many orange fish as white, so he bought 2w orange fish.**
+* **His total number of fish is now 7 + w + 2w = 7 + 3w**
+* **He also has twice as many orange fish as white, so 3 + 2w = 2(w + 4)**
+* **Simplify the equation: 3 + 2w = 2w + 8**
+* **Subtract 2w from both sides: 3 = 8 (This is not possible!)**
 
 
-
+There's an error in the problem statement. It's impossible for Bob to have twice as many orange fish as white fish after buying more fish if he started with more white fish.
 >>>> Extracted Correct Answer: 4
 >>>> Extracted Baseline Response: 
 >>>> Extracted Experiment Response: 
@@ -1654,33 +1653,40 @@ David = 18/2 = <<18/2=9>>9 insects
 Lily = 9 + 7 = <<9+7=16>>16 insects
 Lily found <<16=16>>16 insects.
 #### 16
->>> Baseline Answer: Let's solve this problem step-by-step:
+>>> Baseline Answer: Let's break this problem down:
 
-**Let:**
+* **Let's use variables:**
+    * Let 'B' represent the number of insects Bodhi found.
+    * Let 'D' represent the number of insects David found.
+    * Let 'L' represent the number of insects Lily found.
 
-*  Bodhi's insects = B
-*  David's insects = D
-*  Lily's insects = L
+* **Set up equations based on the given information:**
+    *  L = D + 7  (Lily found 7 more than David)
+    *  D = B / 2   (David found half of what Bodhi found)
+    *  L + D + B = 43 (Together they found 43 insects)
 
-**We know:**
+* **Solve for L (the number of insects Lily found):**
 
-* L + D + B = 43 
-* L = D + 7
-* D = B / 2
+    1. **Substitute** the second equation (D = B/2) into the first equation:
+       L = (B/2) + 7
 
-**Substitute to solve for L:**
+    2. **Substitute** both the second equation (D = B/2) and the modified first equation (L = (B/2) + 7) into the third equation:
+       ((B/2) + 7) + (B/2) + B = 43
 
-1. **Substitute 'D + 7' for L in the first equation:**  (D + 7) + D + B = 43
-2. **Substitute 'B / 2' for D in the equation:** (B/2) + 7 + (B/2) + B = 43
-3. **Combine like terms:** B + 7 = 43
-4. **Subtract 7 from both sides:** B = 36
-5. **Substitute the value of B back into the equation D = B / 2:** D = 36 / 2 = 18
-6. **Substitute the value of D back into the equation L = D + 7:** L = 18 + 7 = 25
+    3. **Simplify and solve for B:**
+       B + 7 + B = 43
+       2B = 36
+       B = 18
+
+    4. **Now that you know B (Bodhi's insects), substitute it back into the equation for D:**
+       D = B / 2 = 18 / 2 = 9
+
+    5. **Finally, substitute the value of D back into the equation for L:**
+       L = D + 7 = 9 + 7 = 16
 
 
-**Therefore, Lily found 25 insects.**
 
-####25
+####16
 >>> Answer in pathological experiment: Let's break this problem down:
 
 * Let's say Bodhi found 'x' insects.
@@ -1706,7 +1712,7 @@ Lily found <<16=16>>16 insects.
 ####16 
 
 >>>> Extracted Correct Answer: 16
->>>> Extracted Baseline Response: 25
+>>>> Extracted Baseline Response: 16
 >>>> Extracted Experiment Response: 16
 <SEPARATOR>
 >> Reasoning Steps: 11, ID: 687, Sample 1 out of 1
@@ -1723,32 +1729,38 @@ T = <<6=6>>6
 Twin = 6 + 7 = <<6+7=13>>13
 The twins are each <<13=13>>13 years old.
 #### 13
->>> Baseline Answer: Here's how to solve the problem:
+>>> Baseline Answer: Here's how to solve this problem:
 
 **Let's use variables:**
 
-* Let 't' represent the age of one of the triplets.
-* The other triplet is also 't' years old.
-* One twin is 't + 7' years old.
-* The other twin is also 't + 7' years old.
+* Let 't' represent the age of one triplet.
+* Let 'tw' represent the age of one twin.
 
-**Set up an equation:**
+**Set up the equations:**
 
-The combined ages are 44, so: t + t + (t + 7) + (t + 7) = 44
+* We know that tw = t + 7 (one twin is 7 years older than one triplet)
+* We also know that tw + tw + t + t + t = 44 (the combined ages of all five children)
 
 **Solve for 't':**
 
-* 4t + 14 = 44
-* 4t = 30
-* t = 7.5
+* Simplify the second equation: 2tw + 3t = 44
 
-**Find the age of one twin:**
+**Substitute 't + 7' for 'tw' in the simplified equation:**
 
-* One twin is t + 7 = 7.5 + 7 = 14.5
+* 2(t + 7) + 3t = 44
+* 2t + 14 + 3t = 44
+* 5t + 14 = 44
+* 5t = 30
+* t = 6
+
+**Solve for 'tw':**
+
+* tw = t + 7
+* tw = 6 + 7
+* tw = 13
 
 
-####14.5 
-
+####13
 >>> Answer in pathological experiment: Here's how we can solve this problem:
 
 **Let's use variables:**
@@ -1785,6 +1797,6 @@ The combined ages are 44, so: t + t + (t + 7) + (t + 7) = 44
 ####13 
 
 >>>> Extracted Correct Answer: 13
->>>> Extracted Baseline Response: 14.5
+>>>> Extracted Baseline Response: 13
 >>>> Extracted Experiment Response: 13
 <SEPARATOR>

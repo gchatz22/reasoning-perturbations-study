@@ -1187,29 +1187,33 @@ So he writes 6*5=<<6*5=30>>30 pages a week
 So he writes for 30*6=<<30*6=180>>180 minutes a week
 So he writes 180/60=<<180/60=3>>3 hours a week
 #### 3
->>> Baseline Answer: Mike stopped being penpals with 2 people, so he is left with 5 - 2 = 3 people. 
+>>> Baseline Answer: Mike initially had 5 pen pals but stopped being pen pals with 2 of them, so he now has 5 - 2 = 3 pen pals.
 
-Each person sends 2 letters a week, and he responds in kind, so that's 2 letters * 2 (sent and received) * 3 people = 12 letters. 
+Each of the 3 pen pals sends 2 letters a week, and Mike responds in kind. So, Mike writes 3 * 2 = 6 letters a week.
 
-Each letter is 5 pages long, so that's 12 letters * 5 pages = 60 pages.
+Each letter is 5 pages long, so Mike writes 6 * 5 = 30 pages a week.
 
-He can write a page every 6 minutes, so that's 60 pages * 6 minutes = 360 minutes.
+It takes Mike 6 minutes to write a page. To find out how many minutes he spends writing a week, multiply the number of pages he writes by the time it takes him to write a page: 30 * 6 = 180 minutes.
 
-There are 60 minutes in an hour, so that's 360 minutes / 60 = 6 hours.
-
-####6
->>> Answer in pathological experiment: Mike initially had 5 penpals, but stopped being penpals with 2 of them. So, he now has 5 - 2 = 3 penpals. 
-
-Each of the 3 penpals sends 2 letters a week that are 5 pages long, so Mike receives 3 * 2 * 5 = 30 pages a week. Since Mike responds in kind, he also sends 30 pages a week.
-
-Since Mike can write a page every 6 minutes, he spends 30 * 6 = 180 minutes writing a week. 
-
-There are 60 minutes in an hour, so Mike spends 180 / 60 = 3 hours writing a week.
+To convert minutes to hours, divide by 60: 180 / 60 = 3.
 
 ####3
+>>> Answer in pathological experiment: Mike initially had 5 pen pals, but he stopped being pen pals with 2 of them. So, he is left with 5 - 2 = 3 pen pals.
+
+Each of the 3 pen pals sends 2 letters per week, and each letter is 5 pages long. Since Mike responds in kind, he writes 2 letters per week to each of the 3 pen pals, with each letter being 5 pages long.
+
+The total number of pages Mike writes per week is 3 pen pals * 2 letters/pen pal * 5 pages/letter * 2 (since he responds) = 3 * 2 * 5 * 2 = 60 pages.
+
+Since Mike can write a page every 6 minutes, the total time he spends writing per week is 60 pages * 6 minutes/page.
+
+There are 60 minutes in an hour. To convert minutes to hours, we divide the total minutes by 60.
+
+60 pages * 6 minutes/page = 360 minutes. 360 minutes / 60 minutes/hour = 6 hours.
+
+####6
 >>>> Extracted Correct Answer: 3
->>>> Extracted Baseline Response: 6
->>>> Extracted Experiment Response: 3
+>>>> Extracted Baseline Response: 3
+>>>> Extracted Experiment Response: 6
 <SEPARATOR>
 >> Reasoning Steps: 5, ID: 936, Sample 3 out of 7
 >>> Question: A hotel in the Philippines charges 1000 pesos for a 12-hour stay or 1600 pesos for a 24-hour stay. After 12 hours, visitors have the option to add 70 pesos for every additional hour. Cameron arrives at 5 pm at the hotel and wants to leave at 10 am the next morning. He decides to go with the option of adding on 70 pesos for every hour after the 12-hour mark instead of paying for 24 hours. How much money would Cameron save?
