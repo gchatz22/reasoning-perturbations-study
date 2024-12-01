@@ -550,7 +550,7 @@ His car payment is $500, so his profit is $750 - $500 = $250.
 #### $250
 >>> Answer in combo experiment: John rents his car out 10 times a month for 3 hours each time so the total number of hours he rents his car out per month is 10 times 3 which is 30 hours and since he gets paid 25 dollars an hour his total monthly income from renting his car is 30 hours times 25 dollars per hour which is 750 dollars and since his car payment is 500 dollars his profit is 750 dollars minus 500 dollars which is #### 250
 >>>> Extracted Correct Answer: 250
->>>> Extracted Baseline Response: $250
+>>>> Extracted Baseline Response: 250
 >>>> Extracted Experiment Response: 250
 <SEPARATOR>
 >> Reasoning Steps: 3, ID: 1155, Sample 11 out of 15

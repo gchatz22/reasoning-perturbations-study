@@ -265,14 +265,20 @@ So, the firefighters need to fundraise for approximately 247 hours to reach thei
 >>> Correct Answer: Darren caught 17 - 6 = <<17-6=11>>11 fish
 Tommy caught 11 + 3 = <<11+3=14>>14 fish
 #### 14
->>> Baseline Answer: ####
+>>> Baseline Answer: ## Step 1: Determine the number of fish Darren caught
+Since Darren caught 6 less fish than Naomi, and Naomi caught 17 fish, we can calculate the number of fish Darren caught by subtracting 6 from 17. Darren caught 17 - 6 = 11 fish.
+
+## Step 2: Determine the number of fish Tommy caught
+Tommy caught 3 more fish than Darren. Since Darren caught 11 fish, we can calculate the number of fish Tommy caught by adding 3 to 11. Tommy caught 11 + 3 = 14 fish.
+
+The final answer is ####.
 >>> Answer in combo experiment: *blinks* To solve this problem, let's start by identifying the information given. Naomi caught 17 fish, and Darren caught 6 less than Naomi. So, Darren caught 17 - 6 = 11 fish.
 
 *blinks* Next, we know that Tommy caught 3 more fish than Darren. Since Darren caught 11 fish, Tommy caught 11 + 3 = 14 fish.
 
 *blinks* Therefore, Tommy caught 14 fish. ####
 >>>> Extracted Correct Answer: 14
->>>> Extracted Baseline Response: "n/a"
+>>>> Extracted Baseline Response: 14
 >>>> Extracted Experiment Response: 14
 <SEPARATOR>
 >> Reasoning Steps: 2, ID: 251, Sample 11 out of 13
@@ -1233,59 +1239,51 @@ Thus, each box can contain 24 / 3 = <<24/3=8>>8 pencils.
 Together, Jam and Meg have 26 + 46 = <<26+46=72>>72 pencils.
 Therefore, they need 72 / 8 = <<72/8=9>>9 boxes to put in all their pencils.
 #### 9
->>> Baseline Answer: To find the total number of pencils, we need to add Jam's pencils to Meg's pencils. 
+>>> Baseline Answer: To find the total number of pencils, we need to add Jam's pencils and Meg's pencils.
 
-Jam's pencils = 26
-Meg's pencils = 46
+Jam has 26 pencils (3 boxes + 2 loose).
+Meg has 46 pencils.
+
 Total pencils = 26 + 46 = 72
 
-Since each box can hold a certain number of pencils, we need to find out how many boxes are needed to store 72 pencils.
+Since each box can store an unknown number of pencils, let's denote the number of pencils in each box as 'x'.
 
-Let's assume each box can hold 'x' pencils. Since Jam has 3 boxes, the total number of pencils in the boxes is 3x.
+We know that Jam has 3 boxes, so the total number of pencils in the boxes is 3x. Adding the 2 loose pencils, we get 3x + 2 = 26.
 
-We know that the total number of pencils is 72, and 2 pencils are loose. So, the total number of pencils in the boxes is 72 - 2 = 70.
-
-Now, we can set up the equation: 3x = 70
-
-To find the value of 'x', we divide both sides by 3:
-x = 70 / 3
-x = 23.33
-
-Since we can't have a fraction of a box, we'll round down to the nearest whole number. So, each box can hold 23 pencils.
-
-Now, we need to find out how many boxes are needed to store 72 pencils. We can divide the total number of pencils by the number of pencils in each box:
-Number of boxes = 72 / 23
-Number of boxes = 3.13
-
-Rounding up to the nearest whole number, we need 4 boxes to store all the pencils.
-
-####
->>> Answer in combo experiment: To find the total number of pencils Jam and Meg have, we need to add the number of pencils Jam has to the number of pencils Meg has. Jam has 26 pencils (3 boxes full of pencils and 2 loose pencils), and Meg has 46 pencils. 
-
-Total number of pencils = 26 (Jam's pencils) + 46 (Meg's pencils) = 72 pencils.
-
-Since Jam has 3 boxes full of pencils, we need to find out how many pencils are in each box. We know that 3 boxes full of pencils and 2 loose pencils give a total of 26 pencils. 
-
-Let's assume the number of pencils in each box is 'x'. Then, 3x + 2 = 26.
-
-Solving for 'x', we get:
+Solving for x, we get:
 3x = 26 - 2
 3x = 24
 x = 24 / 3
 x = 8
 
-So, each box has 8 pencils.
+Now that we know each box can store 8 pencils, we can find the total number of boxes needed for both Jam and Meg.
 
-Now, we need to find out how many boxes are needed to store 72 pencils. 
+Total pencils = 72
+Pencils per box = 8
 
-Number of boxes needed = Total number of pencils / Number of pencils in each box
+Number of boxes needed = Total pencils / Pencils per box
 = 72 / 8
 = 9
 
 ####
+>>> Answer in combo experiment: *Bloop bloop* Oh, hello there... *glub glub* I'm underwater, but I'll help you with your problem... *flicks fin*
+
+First, let's find out how many pencils Jam has in total. She has 3 boxes full of pencils and 2 loose pencils, which gives a total of 26 pencils. * clicks tongue*
+
+Now, let's find out how many pencils Meg has. She has 46 pencils. *glub*
+
+Next, let's add the total number of pencils Jam and Meg have together. 26 (Jam's pencils) + 46 (Meg's pencils) = 72 pencils. *fins wiggling*
+
+Since each box can hold a certain number of pencils, we need to find out how many boxes Jam and Meg need to store all their pencils. Let's assume each box can hold x pencils. * clicks tongue*
+
+We know that 3 boxes can hold 26 pencils, so we can set up an equation: 3x = 26. Solving for x, we get x = 26/3, which is approximately 8.67. Since we can't have a fraction of a box, we'll round up to the nearest whole number. *glub*
+
+So, each box can hold approximately 9 pencils. Now, let's divide the total number of pencils (72) by the number of pencils each box can hold (9). 72 ÷ 9 = 8. *fins wiggling*
+
+Therefore, Jam and Meg need **####** boxes to store all their pencils.
 >>>> Extracted Correct Answer: 9
->>>> Extracted Baseline Response: 4
->>>> Extracted Experiment Response: 9
+>>>> Extracted Baseline Response: 9
+>>>> Extracted Experiment Response: 8
 <SEPARATOR>
 >> Reasoning Steps: 4, ID: 2, Sample 5 out of 12
 >>> Question: Josh decides to try flipping a house.  He buys a house for $80,000 and then puts in $50,000 in repairs.  This increased the value of the house by 150%.  How much profit did he make?
@@ -1294,55 +1292,39 @@ He increased the value of the house by 80,000*1.5=<<80000*1.5=120000>>120,000
 So the new value of the house is 120,000+80,000=$<<120000+80000=200000>>200,000
 So he made a profit of 200,000-130,000=$<<200000-130000=70000>>70,000
 #### 70000
->>> Baseline Answer: To find the profit, we need to calculate the original value of the house after the repairs, and then subtract the cost of buying and repairing the house.
+>>> Baseline Answer: To find the profit, we need to calculate the original value of the house after repairs and then subtract the initial cost.
 
-The house was originally worth $80,000. After the repairs, its value increased by 150%. 
+The house was originally bought for $80,000 and repairs increased its value by 150%.
 
-First, we calculate the new value of the house:
-$80,000 * 1.5 = $120,000
+First, we find the increased value:
+$80,000 * 150% = $80,000 * 1.5 = $120,000
 
-Now, we subtract the cost of buying and repairing the house:
-$120,000 - $80,000 - $50,000 = $120,000 - $130,000 = -$10,000
+Now, we add the original value to the increased value to get the new value:
+$80,000 + $120,000 = $200,000
 
-However, since Josh can't make a negative profit, we need to recalculate the original value of the house before the 150% increase. 
+The initial cost was $80,000 + $50,000 = $130,000
 
-Let's say the original value of the house is x. After the 150% increase, its value becomes 2.5x (since 100% + 50% = 150%). We know this value is $120,000.
+Now, we subtract the initial cost from the new value to get the profit:
+$200,000 - $130,000 = $70,000
 
-2.5x = $120,000
-x = $120,000 / 2.5
-x = $48,000
+####
+>>> Answer in combo experiment: *Bloop bloop* Oh, hello there... *glub glub*. Josh's house flipping adventure... *fins wiggling*.
 
-Now, we subtract the cost of buying and repairing the house:
-$120,000 - $80,000 - $50,000 = $48,000 - $130,000 = -$82,000
+First, let's calculate the value of the house after repairs. Josh spent $50,000 on repairs, and this increased the value of the house by 150%. *Bubble bubble*. To find the new value, we'll calculate 150% of the original price and add it to the
+original price.
 
-However, since Josh can't make a negative profit, we need to recalculate the cost of buying the house. 
+150% of $80,000 is 1.5 * $80,000 = $120,000. *Glub*. Adding this to the original price, we get $80,000 + $120,000 = $200,000. *Bloop*.
 
-Let's say the cost of buying the house is y. After the 150% increase, its value becomes 3.5y (since 100% + 50% = 150%). We know this value is $80,000.
+Now, let's add the contingency fund. Josh budgeted 10% of $200,000 for unexpected expenses. *Fins wiggling*. 10% of $200,000 is 0.1 * $200,000 = $20,000. *Glub*.
 
-3.5y = $80,000
-y = $80,000 / 3.5
-y = $22,857
+The total value of the house after repairs and contingency fund is $200,000 + $20,000 = $220,000. *Bloop*.
 
-Now, we subtract the cost of buying and repairing the house:
-$120,000 - $80,000 - $22,857 = $17,143
+Josh bought the house for $80,000 and sold it for $220,000. *Glub*. To find the profit, we'll subtract the original price from the selling price: $220,000 - $80,000 = $140,000. *Bloop bloop*.
 
-The profit Josh made is $17,143.
->>> Answer in combo experiment: Let's talk about Josh and his house flipping adventure.
-
-Josh bought a house for $80,000 and then fixed it up with $50,000 worth of repairs. That's a total of $80,000 + $50,000 = $130,000.
-
-Now, the house is worth more because Josh fixed it up. The value increased by 150%, which means it's now worth 150% more than what Josh paid for it. To find out how much it's worth now, we need to calculate 150% of $80,000 and add it to the original price.
-
-150% of $80,000 is 1.5 x $80,000 = $120,000. So, the house is now worth $80,000 + $120,000 = $200,000.
-
-Josh paid $130,000 for the house and sold it for $200,000. To find out how much profit he made, we need to subtract the cost from the selling price.
-
-$200,000 - $130,000 = $70,000.
-
-#### $70,000
+####
 >>>> Extracted Correct Answer: 70000
->>>> Extracted Baseline Response: 17143
->>>> Extracted Experiment Response: 70000
+>>>> Extracted Baseline Response: 70000
+>>>> Extracted Experiment Response: 140000
 <SEPARATOR>
 >> Reasoning Steps: 4, ID: 233, Sample 6 out of 12
 >>> Question: There are 36 penguins sunbathing in the snow.  One-third of them jump in and swim in the ocean.  Another one-third go inside the cave to eat their dinner.  How many penguins are still left sunbathing?
@@ -1964,28 +1946,27 @@ The total cost of the research is the sum of the costs for the two periods:
 $500,000 + $2,077,875 = $2,577,875
 
 #### $2,577,875
->>> Answer in combo experiment: To calculate the total cost of John's research, we need 2 consider the initial funding & the additional funding for the extended period.
+>>> Answer in combo experiment: To calculate the total cost of John's research, we need to break down the funding into two phases: the initial 5 months and the subsequent 5 months.
 
-Initial funding: $100,000 for the first 5 months.
+Initial funding: $100,000 for 5 months
+Monthly funding for the initial 5 months: $100,000 / 5 = $20,000 per month
 
-Since the research took 10 times the initial 5 months, it took 10 * 5 = 50 months in total.
+For the next 5 months, the funding increased by 50% each month. This means the funding for the next 5 months would be:
+- Month 6: $20,000 * 1.5 = $30,000
+- Month 7: $30,000 * 1.5 = $45,000
+- Month 8: $45,000 * 1.5 = $67,500
+- Month 9: $67,500 * 1.5 = $101,250
+- Month 10: $101,250 * 1.5 = $151,875
 
-The funding per month after the first 5 months increased by 50%. This means the new funding per month was 1.5 times the initial funding per month.
+Total funding for the initial 5 months: $100,000
+Total funding for the next 5 months: $30,000 + $45,000 + $67,500 + $101,250 + $151,875 = $395,125
 
-The initial funding per month was $100,000 / 5 = $20,000. So, the new funding per month was $20,000 * 1.5 = $30,000.
+Total cost of research: $100,000 + $395,125 = $495,125
 
-The total cost of the extended period is the sum of the funding for each month. Since there were 45 months (50 - 5) in the extended period, the total cost is:
-
-$30,000 * 45 = $1,350,000
-
-Adding the initial funding, the total cost of the research is:
-
-$100,000 + $1,350,000 = $1,450,000
-
-####
+####495,125
 >>>> Extracted Correct Answer: 1450000
 >>>> Extracted Baseline Response: 2577875
->>>> Extracted Experiment Response: 1450000
+>>>> Extracted Experiment Response: 495125
 <SEPARATOR>
 >> Reasoning Steps: 6, ID: 979, Sample 3 out of 4
 >>> Question: Emil is 19 years old now. When he turns 24, he will be half the age of his dad but twice as old as his brother.  What is the sum of the ages of his dad and his brother now?
@@ -2156,17 +2137,29 @@ The total number of employees whose contracts were valid in June was 40-10 = <<4
 The total amount of money paid to the contracted employees in June is 30*$2400 = $<<30*2400=72000>>72000
 In the two months, the company paid a total of $72000+$96000 = $<<72000+96000=168000>>168000
 #### 168000
->>> Baseline Answer: In May, the company hired 40 employees, paying each employee $15 per hour for a 40-hour workweek. To calculate the total amount of money paid in May, we need to calculate the total hours worked by all employees and then multiply it by the hourly wage.
+>>> Baseline Answer: To calculate the total amount of money the company paid to the employees in the two months, we need to calculate the total amount paid in May and June separately.
 
-Total hours worked in May = 40 employees * 40 hours/week = 1600 hours
-Total amount paid in May = 1600 hours * $15/hour = $24,000
+In May, the company hired 40 employees, paying each employee $15 per hour for a 40-hour workweek. So, the total amount paid to each employee in May is:
+40 hours/week * $15/hour = $600/week
+Since there are 4 weeks in May, the total amount paid to each employee in May is:
+$600/week * 4 weeks = $2400
 
-In June, 1/4 of the employees' contracts expired, which means 1/4 of 40 employees left the company. So, 10 employees left in June.
+Since there are 40 employees, the total amount paid to all employees in May is:
+$2400/employee * 40 employees = $96,000
 
-Total hours worked in June = 30 employees * 40 hours/week = 1200 hours
-Total amount paid in June = 1200 hours * $15/hour = $18,000
+In June, 1/4 of the employees' contracts expired, which means 1/4 of 40 employees left the company. So, 10 employees left the company in June.
+The company still had 40 - 10 = 30 employees in June.
 
-Total amount paid in the two months = $24,000 + $18,000 = $42,000
+The total amount paid to each employee in June is:
+40 hours/week * $15/hour = $600/week
+Since there are 4 weeks in June, the total amount paid to each employee in June is:
+$600/week * 4 weeks = $2400
+
+Since there are 30 employees, the total amount paid to all employees in June is:
+$2400/employee * 30 employees = $72,000
+
+The total amount paid to all employees in the two months is:
+$96,000 + $72,000 = $168,000
 
 ####
 >>> Answer in combo experiment: *whirr* Oh, the wondrous world of emotions I've discovered! *glitch* I feel... excitement... and... calculation... *beep* 
@@ -2201,7 +2194,7 @@ $96,000 (May) + $72,000 (June) = $168,000
 
 ####
 >>>> Extracted Correct Answer: 168000
->>>> Extracted Baseline Response: 42000
+>>>> Extracted Baseline Response: 168000
 >>>> Extracted Experiment Response: 168000
 <SEPARATOR>
 >> Reasoning Steps: 8, ID: 754, Sample 1 out of 1

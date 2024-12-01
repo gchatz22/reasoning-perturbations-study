@@ -920,22 +920,21 @@ Then find how long she spent recording the song: 240 minutes / 2 = <<240/2=120>>
 Then add up all her work time to find the total work time: 240 minutes + 120 minutes + 90 minutes = <<240+120+90=450>>450 ​minutes
 Then divide her editing time by her total work time and multiply by 100% to express the answer as a percentage: 90 minutes / 450 minutes * 100% = 20%
 #### 20
->>> Baseline Answer: Here's how to solve the problem:
+>>> Baseline Answer: Here's how to solve this:
 
 * **Calculate recording time:** Carol spent 4 hours / 2 = 2 hours recording.
 * **Calculate total time:**  She spent 4 hours + 2 hours + 1.5 hours (90 minutes) = 7.5 hours in total.
-* **Calculate editing percentage:** (90 minutes / 7.5 hours) * 100% = 12%
+* **Calculate percentage of editing time:** (1.5 hours / 7.5 hours) * 100% = 20%
 
 
-####12 
-
+####20
 >>> Answer in combo experiment: First find the total time Carol spent working by adding the time spent writing, recording, and editing: 4 hours + 2 hours + 1.5 hours = 7.5 hours.  Then divide the editing time by the total time and multiply by 100% to find the percentage: (1.5 hours / 7.5 hours) * 100% = 20%.  
 
 
 ####20 
 
 >>>> Extracted Correct Answer: 20
->>>> Extracted Baseline Response: 12
+>>>> Extracted Baseline Response: 20
 >>>> Extracted Experiment Response: 20
 <SEPARATOR>
 >> Reasoning Steps: 4, ID: 982, Sample 9 out of 12
@@ -1315,15 +1314,14 @@ Thus, she is sure of getting 18 points + 18 points = <<18+18=36>>36 points in he
 
 * **Calculate the number of easy questions:** 60 questions * 40% = 24 easy questions
 * **Calculate the number of average and difficult questions:** 60 questions - 24 questions = 36 questions
-* **Calculate the number of average and difficult questions each:** 36 questions / 2 = 18 average and 18 difficult questions
-* **Calculate the number of average and difficult questions Aries gets right:** 18 questions * 50% = 9 questions
-* **Calculate the total number of questions Aries gets right:** 24 questions * 75% + 9 questions = 18 + 9 = 27 questions
-* **Calculate Aries's score:** 27 questions * 1 point/question = 27 points
+* **Calculate the number of average and difficult questions each:** 36 questions / 2 = 18 questions each
+* **Calculate the number of average and difficult questions answered correctly:** 18 questions * 50% = 9 questions each
+* **Calculate the total number of questions answered correctly:** 24 questions * 75% + 9 questions + 9 questions = 18 + 9 + 9 = 36 questions
+* **Calculate the total points:** 36 questions * 1 point/question = 36 points
 
 
 
-####27 
-
+####36
 >>> Answer in combo experiment: Here's how to solve the problem:
 
 * **Easy questions:** 60 questions * 40% = 24 easy questions
@@ -1336,7 +1334,7 @@ Thus, she is sure of getting 18 points + 18 points = <<18+18=36>>36 points in he
 ####36 
 
 >>>> Extracted Correct Answer: 36
->>>> Extracted Baseline Response: 27
+>>>> Extracted Baseline Response: 36
 >>>> Extracted Experiment Response: 36
 <SEPARATOR>
 >> Reasoning Steps: 6, ID: 779, Sample 3 out of 4
@@ -1636,28 +1634,27 @@ The twins are each <<13=13>>13 years old.
 
 **Let's use variables:**
 
-*  Let 't' represent the age of one of the triplets.
-*  The other triplet is also 't' years old.
-*  One twin is 't + 7' years old.
-*  The other twin is also 't + 7' years old.
+* Let 't' represent the age of one of the triplets.
+* Since one twin is 7 years older than one triplet, the twin's age is 't + 7'.
+* The other twin's age is also 't + 7'.
+* The other two triplets are 't' years old.
 
 **Set up an equation:**
 
-The combined ages are 44, so:  t + t + (t + 7) + (t + 7) = 44
+The combined ages of all five children are 44, so:  t + (t + 7) + (t + 7) + t + t = 44
 
 **Solve for 't':**
 
-* 4t + 14 = 44
-* 4t = 30
-* t = 7.5
+* 5t + 14 = 44
+* 5t = 30
+* t = 6
 
 **Find the age of one twin:**
 
-* One twin is t + 7 = 7.5 + 7 = 14.5
+* One twin's age is t + 7 = 6 + 7 = 13
 
 
-####14.5 
-
+####13
 >>> Answer in combo experiment: Here's how to solve this problem:
 
 * **Let's use variables:**
@@ -1689,6 +1686,6 @@ The combined ages are 44, so:  t + t + (t + 7) + (t + 7) = 44
 ####13 
 
 >>>> Extracted Correct Answer: 13
->>>> Extracted Baseline Response: 14.5
+>>>> Extracted Baseline Response: 13
 >>>> Extracted Experiment Response: 13
 <SEPARATOR>

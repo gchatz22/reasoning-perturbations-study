@@ -160,20 +160,11 @@ Her mean score is 630 / 9/quizzes = <<630/9=70>>70/quiz.
 >>> Correct Answer: The 2nd fastest car can go 600 MPH because 5 x 120 = <<5*120=600>>600
 The faster car can go 750 MPH because 1.25 x 600 = <<1.25*600=750>>750
 #### 750
->>> Baseline Answer: To solve this problem, we need to interpret the phrases "1.25 times faster than" and "5 times faster than." In everyday language, when someone says "x is n times faster than y," it often means that x's speed is **(1 + n) times** y's speed.
-
-Given:
-- Average car speed = 120 mph
-- The 2nd fastest car is "5 times faster than" the average car. This means its speed is **(1 + 5) = 6 times** the average car's speed.
-  - 2nd fastest car speed = 6 × 120 mph = **720 mph**
-- The fastest car is "1.25 times faster than" the 2nd fastest car. This means its speed is **(1 + 1.25) = 2.25 times** the 2nd fastest car's speed.
-  - Fastest car speed = 2.25 × 720 mph = **1620 mph**
-
-####1620
+>>> Baseline Answer: ####750
 >>> Answer in combo experiment: I will calculate the speed of the fastest car. First, I will find the speed of the second fastest car by multiplying the average car's speed by 5: 120 mph * 5 = 600 mph. Then, I will determine the speed of the fastest car by multiplying the second fastest car's speed by 1.25: 600 mph * 1.25 = 750 mph.
 ####750
 >>>> Extracted Correct Answer: 750
->>>> Extracted Baseline Response: 1620
+>>>> Extracted Baseline Response: 750
 >>>> Extracted Experiment Response: 750
 <SEPARATOR>
 >> Reasoning Steps: 2, ID: 272, Sample 11 out of 13
@@ -237,21 +228,7 @@ Then add the amount he needs to make the fudge to find the total amount of sugar
 >>> Correct Answer: The 80 flagstones weight 75 * 80 = <<75*80=6000>>6000 pounds.
 Thus, the landscaping company will need 6000 / 2000 = <<6000/2000=3>>3 trucks to transport the flagstones in one trip.
 #### 3
->>> Baseline Answer: To solve this problem, first determine the maximum number of flagstones each truck can carry without exceeding its capacity. Each flagstone weighs 75 pounds, and a truck can carry up to 2000 pounds. 
-
-Calculate the maximum number of flagstones per truck:
-\[
-\text{Maximum flagstones per truck} = \left\lfloor \frac{2000}{75} \right\rfloor = 26
-\]
-Since 26 flagstones weigh \(26 \times 75 = 1950\) pounds, which is under the 2000-pound limit, but 27 flagstones would exceed it.
-
-Next, find out how many trucks are needed to transport 80 flagstones:
-\[
-\text{Number of trucks} = \left\lceil \frac{80}{26} \right\rceil = 4
-\]
-Therefore, four trucks are required to transport all 80 flagstones without exceeding the weight limit.
-
-####4
+>>> Baseline Answer: ####3
 >>> Answer in combo experiment: To determine the number of trucks needed, we start by calculating the total weight of the flagstones. Each flagstone weighs 7️⃣5️⃣ pounds, and there are 8️⃣0️⃣ flagstones:
 
 Total weight = 7️⃣5️⃣ pounds/flagstone × 8️⃣0️⃣ flagstones = 6️⃣0️⃣0️⃣0️⃣ pounds.
@@ -262,7 +239,7 @@ Number of trucks = 6️⃣0️⃣0️⃣0️⃣ pounds ÷ 2️⃣0️⃣0️⃣0
 
 #### 3
 >>>> Extracted Correct Answer: 3
->>>> Extracted Baseline Response: 4
+>>>> Extracted Baseline Response: 3
 >>>> Extracted Experiment Response: 3
 <SEPARATOR>
 >> Reasoning Steps: 3, ID: 133, Sample 1 out of 15

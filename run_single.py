@@ -21,6 +21,7 @@ from main import (
     pre_processing_irrelavant,
     pre_processing_relevant,
     pre_processing_pathological,
+    pre_processing_combo,
     validate_answer,
 )
 
