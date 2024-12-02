@@ -354,8 +354,10 @@ def main(
                         datapoint["question"], model_provider
                     )
 
+            print("[white not bold] {}[/white not bold]\n".format(experiment_prompt))
+            raise "hey"
             print(
-                "[green]>>> Question:[/green][white][not bold] {}[white not bold]\n".format(
+                "[green]>>> Question:[/green][white not bold] {}[/white not bold]\n".format(
                     datapoint["question"]
                 )
             )

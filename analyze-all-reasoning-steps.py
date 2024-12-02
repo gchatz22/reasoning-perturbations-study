@@ -20,13 +20,13 @@ def analyze_by_reasoning_steps(data: str, model: str, perturbation: str):
     if datapoints[-1] == "\n":
         datapoints = datapoints[:-1]
 
-    grouped_results = defaultdict(lambda: {
-        "total": 0,
-        "baseline_correct": 0,
-        "experiment_correct": 0
-    })
+    grouped_results = defaultdict(
+        lambda: {"total": 0, "baseline_correct": 0, "experiment_correct": 0}
+    )
 
     for datapoint in datapoints:
+        if datapoint == "\n" or not datapoint:
+            break
         reasoning_steps_match = re.search(r"Reasoning Steps:\s*(\d+)", datapoint)
         if reasoning_steps_match:
             reasoning_steps = int(reasoning_steps_match.group(1))
@@ -46,6 +46,8 @@ def analyze_by_reasoning_steps(data: str, model: str, perturbation: str):
                 grouped_results[reasoning_steps]["baseline_correct"] += 1
             if experiment_response == correct_answer:
                 grouped_results[reasoning_steps]["experiment_correct"] += 1
+        else:
+            raise Exception("Data point entry does not outline reasoning steps")
 
     table = Table(
         title=f"\n\n[bold]Results Breakdown by Reasoning Steps for {model}, {perturbation}[/bold]",
@@ -53,8 +55,8 @@ def analyze_by_reasoning_steps(data: str, model: str, perturbation: str):
     )
     table.add_column("Reasoning Steps", style="cyan bold", justify="center")
     table.add_column("Total Entries", style="magenta bold", justify="center")
-    table.add_column("Baseline Accuracy (%)", justify="center")
-    table.add_column("Experiment Accuracy (%)", justify="center")
+    table.add_column("Baseline Accuracy (%)", style="bold", justify="center")
+    table.add_column("Experiment Accuracy (%)", style="bold", justify="center")
 
     for steps, results in sorted(grouped_results.items()):
         total = results["total"]
@@ -64,7 +66,7 @@ def analyze_by_reasoning_steps(data: str, model: str, perturbation: str):
             str(steps),
             str(total),
             f"{baseline_accuracy:.2f}",
-            f"{experiment_accuracy:.2f}"
+            f"{experiment_accuracy:.2f}",
         )
 
     console.print(Align.center(table))
@@ -80,7 +82,9 @@ def main():
                 for file in os.listdir(model_path):
                     if file == pattern:
                         file_path = os.path.join(model_path, file)
-                        console.print(f"\nProcessing file: {file_path}\n")
+                        console.print(
+                            f"\n[cyan bold]Processing file: {file_path}[/cyan bold]\n"
+                        )
                         with open(file_path, "r") as f:
                             data = f.read()
                         analyze_by_reasoning_steps(data, model, perturbation)
