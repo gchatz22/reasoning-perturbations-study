@@ -159,7 +159,7 @@ def main():
 
     for perturbation in PERTURBATIONS:
         results = {}
-        for model in os.listdir(base_path):
+        for model in sorted([path.lower() for path in os.listdir(base_path)], reverse=True):
             model_path = os.path.join(base_path, model)
             if os.path.isdir(model_path):
                 pattern = f"cleaned-{perturbation}.txt"
