@@ -160,7 +160,6 @@ def plot_aggregate_percent_difference(aggregated_results):
     plt.title("Aggregate Percent Difference from Baseline vs. Reasoning Steps")
     plt.xlabel("Reasoning Steps")
     plt.ylabel("Percent Difference (%)")
-    plt.xticks(range(2, 7))
     plt.grid(True)
     plt.tight_layout()
     plt.savefig(f"{OUTPUT_DIR}/aggregate_percent_difference.png")

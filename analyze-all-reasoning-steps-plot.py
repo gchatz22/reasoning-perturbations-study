@@ -160,7 +160,6 @@ def plot_aggregate_results(aggregated_results):
     plt.title("Aggregate Experiment Accuracy vs. Reasoning Steps")
     plt.xlabel("Reasoning Steps")
     plt.ylabel("Accuracy (%)")
-    plt.xticks(range(2, 7))
     plt.grid(True)
     plt.tight_layout()
     plt.savefig(f"{OUTPUT_DIR}/aggregate_experiment.png")
