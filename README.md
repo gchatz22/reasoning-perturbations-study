@@ -1,6 +1,5 @@
-Follow the steps below to set up the CLI.
-
 ## Install required dependecies
+
 ```
 pip install typer rich python-dotenv openai anthropic cohere together tiktoken typing bs4 requests pandas tqdm matplotlib
 ```
